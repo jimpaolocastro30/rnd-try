@@ -1,0 +1,155 @@
+<div class="containter-fluid p-t-30" ng-init="getCategoryData();">
+    <div class="card p-t-20">
+        <div class="card-header">
+            <h1 style="font-size:18px;">Category Management</h1>
+            <hr />
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 p-30">
+                <div class="card-padding m-t-20">
+                    <div class="form-group fg-float">
+                        <div id="urlContainer" ng-class="{'fg-toggled' : categoryName }" class="fg-line">
+                            <input id="CategoryName" class="form-control fg-input" type="text" ng-model="categoryName"
+                                ng-disabled="!adminRoleAccess_Create">
+                            <label class="fg-label">Category Name</label>
+                        </div>
+                    </div>
+
+
+
+                    <label class="checkbox checkbox-inline m-r-5">
+                        <input type="checkbox" ng-model="isrequiredlogin" value="option1">
+                        <i class="input-helper"></i>
+                        Require log-in
+                    </label>
+                    <!-- <label class="checkbox checkbox-inline m-r-5">
+                        <input type="checkbox" ng-model="categorypreroll" value="option1">
+                        <i class="input-helper"></i>
+                        Pre-roll
+                    </label>
+                     -->
+                    <label class="checkbox checkbox-inline m-r-10">
+                        <input type="checkbox" ng-model="categorymidroll" value="option2">
+                        <i class="input-helper"></i>
+                        Show Ads
+                    </label>
+
+                    <div class="geoBlockCategory m-t-20">
+                        <div class="form-group fg-float">
+                            <div class="fg-line">
+                                <select class="form-control fg-select" ng-model="geoaccess">
+                                    <!-- <option value="" disabled selected>Geo Access</option> -->
+                                    <option value="GLOBAL">GLOBAL</option>
+                                    <option value="PH">PH</option>
+                                </select>
+                                <label class="fg-label">Geo Access</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-group btn-group-lg pull-right" role="group">
+                        <button type="button" class="btn btn-primary waves-effect" ng-click="editCategory()"
+                            ng-disabled="!adminRoleAccess_Update" ng-if="isEditMode">Save</button>
+                    </div>
+                    <div class="btn-group btn-group-lg pull-right" role="group">
+                        <button type="button" class="btn btn-primary waves-effect" ng-click="insertNewCategory()"
+                            ng-disabled="!adminRoleAccess_Create" ng-if="!isEditMode">Create</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-8 p-l-0" style="border-left: 1px solid black;">
+                <div class="table-responsive">
+                    <div>
+                        <table ng-table="tableBasic" class="table table-striped table-vmiddle">
+                            <tr ng-repeat="w in categoryData track by $index">
+                                <td data-title="'Name'">
+                                    <div class="form-group fg-float fg-toggled m-b-10 m-t-15 p-r-30">
+                                        <div id="urlContainer" class="fg-line fg-toggled fg-toggle-off">
+                                            <input class="form-control fg-input" ng-disabled="!w.is_edit" type="text"
+                                                ng-model="w.newName" ng-value="w.name">
+                                            <label class="fg-label"></label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-title="''" style="width: 18%">
+                                    <label class="checkbox checkbox-inline m-r-10">
+                                        <input type="checkbox" ng-model="w.is_required_login" value="option1"
+                                            ng-disabled="checkBoxDisplay">
+                                        <i class="input-helper"></i>
+                                        is required log-in
+                                    </label>
+                                </td>
+
+                                <!-- <td data-title="''" style="width: 20%" > -->
+                                <!-- <label class="checkbox checkbox-inline m-r-10">
+                                        <input type="checkbox" ng-model="w.pre_roll" value="option1">
+                                        <i class="input-helper"></i>
+                                        Pre-roll
+                                    </label> -->
+                                <!-- </td> -->
+                                <td data-title="''" style="width: 15%">
+                                    <label class="checkbox checkbox-inline m-r-10">
+                                        <input type="checkbox" ng-model="w.mid_roll" value="option2"
+                                            ng-disabled="checkBoxDisplay">
+                                        <i class="input-helper"></i>
+                                        Show Ads
+                                    </label>
+                                </td>
+
+                                <td data-title="''" style="width: 8%">
+                                    <label class="m-r-10">                                        
+                                        {{w.geo_access}}
+                                    </label>
+                                </td>
+                                <!-- <td data-title="'Category'" style="width: 20%">
+                                    <label>                                        
+                                        Category
+                                    </label>
+                                </td> -->
+
+                                <td>
+                                    <button type="button" class="btn btn-default ng-scope waves-effect"
+                                        tooltip-placement="top" uib-tooltip="Edit"
+                                        ng-click="editMode(w.id,w.id_crypt,w.name,w.is_required_login,w.mid_roll,w.geo_access);"
+                                        ng-disabled="!adminRoleAccess_Update" ng-if="!w.is_src_muvi"><i
+                                            class="zmdi zmdi-edit zmdi-hc-fw"></i></button>
+                                </td>
+                                <td data-title="'Control'" style="width: 10%">
+                                    <button type="button" class="btn btn-default" tooltip-placement="top"
+                                        uib-tooltip="Delete" ng-click="deleteCategory(w.id,w.id_crypt);"
+                                        ng-disabled="!adminRoleAccess_delete"><i class="zmdi zmdi-delete"></i></button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-default btn-icon waves-effect waves-circle"
+                                        ng-click="refreshCategory(w.id,w.id_crypt);"><i
+                                            class="zmdi zmdi-refresh"></i></button>
+                                </td>
+
+                                <td>
+                                    <div class="form-group">
+                                        <div class="fg-line">
+                                            <div id="typeContainer">
+
+                                                <select id="type" ng-model="orderNo"
+                                                    ng-change="setOrdering(orderNo,w.id,w.id_crypt);">
+                                                    <option selected value="">{{$index + 1}}</option>
+                                                    <option ng-repeat="x in toArray(categoryTotal) track by $index"
+                                                        value="{{ $index + 1 }}" ng-if="$parent.$index != $index">
+                                                        {{$index + 1 }}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

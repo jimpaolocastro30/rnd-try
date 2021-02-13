@@ -1,0 +1,12 @@
+<header id="header" class="bgm-black c-white" data-ng-include src="'template/header.html'" data-ng-controller="headerCtrl as hctrl" ></header>
+<!-- <div style="margin:90px 0 0 0; height:calc(100vh / 1.55); width:100%; text-align:center; background:#000000;" class="request-buffer ng-scope">
+  <img src="/img/loader.gif" alt="HTML5 Icon" style="width:  30%; height: calc(100vh / 1.55)">
+</div> -->
+  <div class="headerPopupCss" data-ng-controller="headerCtrl as hctrl" ng-show="headerPopup" ng-init="getBannerSectionData();">
+    <a style="font-weight: bolder;cursor: pointer;" class="m-r-20 c-black" ng-click="hideHeaderPopup()">&times;</a>
+    <a href="http://www.myboysen.com/" target="_blank"style="text-decoration: underline;cursor: pointer;" class="c-black" ng-bind-html="view_green_banner_text">
+      
+    </a>
+  </div>
+  <section id="content" class="request-buffer-page page-view display-none" ng-class="{'m-t-30': !isHeaderTransparent, 'm-t-0': isHeaderTransparent}" data-ui-view></section>
+<footer id="footer" class="bgm-black" data-ng-include src="'template/footer.html'"></footer>

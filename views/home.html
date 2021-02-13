@@ -1,0 +1,363 @@
+<!-- <div ng-init="initData();initCategoriesGeo()"> -->
+  <div ng-init="initData();">
+  <!--                         -->
+  <!--          BANNER         -->
+  <!--                         -->
+  <div id="banner-carousel">
+    <uib-carousel interval="myInterval" active="active" no-pause="true">
+      <uib-slide ng-repeat="slide in slides" index="$index" >
+        <img class="carousel-image" ng-src="{{slide.original}}" style="height:calc(100vh / 1.5);width: 100%">
+                <!-- <img class="carousel-image" ng-src="{{slide.original}}" style="margin:auto;height:calc(100vh / 1.44);width: fit-content"> -->
+        <div class="carousel-caption" >
+          <h1 class="carousel-title goBebas">{{slide.banner_text_heading}}</h1>
+          <p class="m-t-10 m-b-10 mobile-display-none">{{slide.banner_text_description}}</p>
+
+          <!-- Original code -->
+          <!-- <button ng-if="slide.banner_array_link[3] == 'series'" class="mobile-portrait-m-t-5 btn f-700" ui-sref="main.watchNowSeries({category:slide.banner_array_link[4] ,title:slide.banner_array_link[5]})">
+            <span>
+              <img
+                class="play"
+                src="/img/Play Button.png"
+                alt=""/>
+              </span> PLAY
+          </button>          
+
+          <button ng-if="slide.banner_array_link[3] == 'movie'" class="mobile-portrait-m-t-5 btn f-700" ui-sref="main.watchNowMovie({category:slide.banner_array_link[4],title:slide.banner_array_link[5]})">
+            <span>
+              <img
+                class="play"
+                src="/img/Play Button.png"
+                alt=""/>
+              </span> PLAY
+          </button> -->
+          <!-- End Original code -->
+
+
+          <!-- <span ng-if="boysen.ipContry == 'PH'">
+            <span ng-if="boysen.ipContry != 'PH' && bannerArrayLinkGenre[$index].geo_access == ''">
+              <span ng-if="boysen.ipContry != 'PH' && bannerArrayLinkGenre[$index].geo_access == 'GLOBAL'">
+                <span ng-if="boysen.ipContry != 'PH' && bannerArrayLinkGenre[$index].geo_access == 'PH'"> -->
+
+          <!-- Series -->
+          <span ng-if="countryCode == 'PH'">
+            <button ng-if="slide.banner_array_link[3] == 'series'" class="mobile-portrait-m-t-5 btn f-700" ui-sref="main.watchNowSeries({category:slide.banner_array_link[4] ,title:slide.banner_array_link[5]})">
+              <span>
+                <img
+                  class="play"
+                  src="/img/Play Button.png"
+                  alt=""/>
+                </span> PLAY
+            </button>  
+          </span>    
+          
+          <!-- <span ng-if="countryCode != 'PH' && (bannerArrayLinkGenre[$index].bGenre == 'Boysen Now'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Boysen Classics'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Boysen Beats'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Boysen DIY'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Be Heard'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Be Better'.toLowerCase())"> -->
+        <span ng-if="countryCode != 'PH' && bannerArrayLinkGenre[$index].geo_access == ''">
+            <button ng-if="slide.banner_array_link[3] == 'series'" class="mobile-portrait-m-t-5 btn f-700"
+              ui-sref="main.watchNowSeries({category:slide.banner_array_link[4] ,title:slide.banner_array_link[5]})">
+              <span>
+                <img class="play" src="/img/Play Button.png" alt="" />
+              </span> PLAY
+            </button>
+          </span>
+
+          <!-- <span ng-if="countryCode != 'PH' && (bannerArrayLinkGenre[$index].bGenre == 'Boysen Now'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Boysen Classics'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Boysen Beats'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Boysen DIY'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Be Heard'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Be Better'.toLowerCase())"> -->
+              
+            <span ng-if="countryCode != 'PH' && bannerArrayLinkGenre[$index].geo_access == 'GLOBAL'">
+            <button ng-if="slide.banner_array_link[3] == 'series'" class="mobile-portrait-m-t-5 btn f-700" ui-sref="main.watchNowSeries({category:slide.banner_array_link[4] ,title:slide.banner_array_link[5]})">
+              <span>
+                <img
+                  class="play"
+                  src="/img/Play Button.png"
+                  alt=""/>
+                </span> PLAY
+            </button>  
+          </span> 
+
+          <!-- <span ng-if="countryCode != 'PH' && (bannerArrayLinkGenre[$index].bGenre == 'Recently Added'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Box Office Presents'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Binge'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Big Time Bouts'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Brave and Bold'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Beyond Borders'.toLowerCase())">              -->
+        <span ng-if="countryCode != 'PH' && bannerArrayLinkGenre[$index].geo_access == 'PH'">
+            <button ng-if="slide.banner_array_link[3] == 'series'" class="mobile-portrait-m-t-5 btn f-700" ng-click="setGeoBlock()">
+              <span>
+                <img
+                  class="play"
+                  src="/img/Play Button.png"
+                  alt=""
+                  />
+                </span> PLAY
+            </button>  
+          </span> 
+
+          <!-- Movie -->
+          <!-- <button ng-if="slide.banner_array_link[3] == 'movie'" class="mobile-portrait-m-t-5 btn f-700" ui-sref="main.watchNowMovie({category:slide.banner_array_link[4],title:slide.banner_array_link[5]})">
+            <span>
+              <img
+                class="play"
+                src="/img/Play Button.png"
+                alt=""/>
+              </span> PLAY
+          </button> -->
+          
+          <span ng-if="countryCode == 'PH'">
+            <button ng-if="slide.banner_array_link[3] == 'movie'" class="mobile-portrait-m-t-5 btn f-700" ui-sref="main.watchNowMovie({category:slide.banner_array_link[4] ,title:slide.banner_array_link[5]})">
+              <span>
+                <img
+                  class="play"
+                  src="/img/Play Button.png"
+                  alt=""/>
+                </span> PLAY
+            </button>  
+          </span>    
+          
+          <span ng-if="countryCode != 'PH' && (bannerArrayLinkGenre[$index].bGenre == 'Boysen Now'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Boysen Classics'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Boysen Beats'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Boysen DIY'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Be Heard'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Be Better'.toLowerCase())">
+            <button ng-if="slide.banner_array_link[3] == 'movie'" class="mobile-portrait-m-t-5 btn f-700" ui-sref="main.watchNowMovie({category:slide.banner_array_link[4] ,title:slide.banner_array_link[5]})">
+              <span>
+                <img
+                  class="play"
+                  src="/img/Play Button.png"
+                  alt=""/>
+                </span> PLAY
+            </button>  
+          </span> 
+
+          <span ng-if="countryCode != 'PH' && (bannerArrayLinkGenre[$index].bGenre == 'Recently Added'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Box Office Presents'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Binge'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Big Time Bouts'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Brave and Bold'.toLowerCase() || bannerArrayLinkGenre[$index].bGenre == 'Beyond Borders'.toLowerCase())">             
+            <button ng-if="slide.banner_array_link[3] == 'movie'" class="mobile-portrait-m-t-5 btn f-700" ng-click="setGeoBlock()">
+              <span>
+                <img
+                  class="play"
+                  src="/img/Play Button.png"
+                  alt=""
+                  />
+                </span> PLAY
+            </button>  
+          </span> 
+          
+
+
+        </div>
+      </uib-slide>
+    </uib-carousel>
+  </div>
+  <!--                         -->
+  <!--      END BANNER         -->
+  <!--                         -->
+  <!--      CATEGORY           -->
+  <!--                         -->
+  <div class="watch-for-free bgm-yellow large-desktop-p-t-30 desktop-p-t-30 large-desktop-p-b-30 desktop-p-b-30 tablet-portrait-b-25 mobile-portrait-p-t-10">
+    <div class="watch-for-free-label goFultura"> Watch For Free</div> <br>
+    <div class="watch-for-free-category-label goFultura c-black">Browse Our Categories</div>
+    <div class="p-b-30 m-b-0" id="category-selection">
+      <button class="btn bgm-yellow c-black large-desktop-m-l-5 desktop-m-l-5 catogory-buttons" ng-repeat="category in categoryList" ng-click="setCategoryView(category.categoryName);"> {{ category.categoryName }} </button>
+    </div>
+  </div>
+  <!--                         -->
+  <!--      END CATEGORY       -->
+  <!--                         -->
+  <!--       GRID LIST         -->
+  <!--                         -->
+  <div id="grid-list" class="margin-right-web-div thumbnails bgm-black c-white large-desktop-p-25 desktop-p-25" style="width:100%;">
+
+    <div ng-if="!specificView && isLoggedIn && (continueWatching.length != 0)">
+      <h3 class="boysen-now-controls-container goFultura c-white categoryIndention p-l-5 p-t-5">
+        {{ 'Continue Watching' | uppercase }}      
+        <span class="margin-right-web-controller" style="white-space: nowrap; position: absolute; right: 0; margin-top: -15px;">
+            <button ng-click="scrollNextandPrev('prev')" ng-if="continueWatching.length > 6" class="btn bgm-black c-white f-20 hidden-xs hidden-sm"><i class="zmdi zmdi-chevron-left zmdi-hc-fw"></i></button>
+            <button ng-click="scrollNextandPrev('right');" ng-if="continueWatching.length > 6" class="btn bgm-black c-white f-20 hidden-xs hidden-sm m-r-30"><i class="zmdi zmdi-chevron-right zmdi-hc-fw"></i></button>
+        </span>
+      </h3>
+      <div class="scrollable-content p-l-5 p-r-5" id="continue-watching">        
+        <div ng-repeat="boysen in continueWatching track by $index" class="item gridItem" style="text-align: center;">              
+         
+            <span ng-if="countryCode == 'PH'">
+              <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.movie.content_types_id == '1'"
+                src="{{boysen.movie.poster}}"
+                ui-sref="main.watchNowMovie({category:cleanPermalinkCategory(boysen.movie.genre),title:boysen.movie.permalink})">
+              <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.movie.content_types_id == '3'"
+                src="{{boysen.movie.poster}}"
+                ui-sref="main.watchNowSeries({category:cleanPermalinkCategory(boysen.movie.genre),title:boysen.movie.permalink})">
+              <uib-progressbar value="boysen.percentage" type="success"></uib-progressbar>
+            </span>
+            <span
+              ng-if="countryCode != 'PH' && cwGenre[$index].geo_access == ''">
+              <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.movie.content_types_id == '1'"
+                src="{{boysen.movie.poster}}"
+                ui-sref="main.watchNowMovie({category:cleanPermalinkCategory(boysen.movie.genre),title:boysen.movie.permalink})">
+              <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.movie.content_types_id == '3'"
+                src="{{boysen.movie.poster}}"
+                ui-sref="main.watchNowSeries({category:cleanPermalinkCategory(boysen.movie.genre),title:boysen.movie.permalink})">
+              <uib-progressbar value="boysen.percentage" type="success"></uib-progressbar>
+            </span>
+            <span ng-if="countryCode != 'PH' && cwGenre[$index].geo_access == 'GLOBAL'">
+              <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.movie.content_types_id == '1'"
+                src="{{boysen.movie.poster}}"
+                ui-sref="main.watchNowMovie({category:cleanPermalinkCategory(boysen.movie.genre),title:boysen.movie.permalink})">
+              <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.movie.content_types_id == '3'"
+                src="{{boysen.movie.poster}}"
+                ui-sref="main.watchNowSeries({category:cleanPermalinkCategory(boysen.movie.genre),title:boysen.movie.permalink})">
+              <uib-progressbar value="boysen.percentage" type="success"></uib-progressbar>
+            </span>
+            <span
+              ng-if="countryCode != 'PH' && cwGenre[$index].geo_access == 'PH'">
+              <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.movie.content_types_id == '1'"
+                src="{{boysen.movie.poster}}" ng-click="setGeoBlock()">
+              <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.movie.content_types_id == '3'"
+                src="{{boysen.movie.poster}}" ng-click="setGeoBlock()">
+              <uib-progressbar value="boysen.percentage" type="success"></uib-progressbar>
+            </span>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <div ng-repeat="category in categoryList" ng-if="category.show">
+      <h3 class="boysen-now-controls-container goFultura c-white categoryIndention p-l-5 p-t-5">
+        {{ category.categoryName | uppercase }}        
+        <span class="margin-right-web-controller" style="white-space: nowrap; position: absolute; right: 0; margin-top: -15px;">
+            <button ng-click="prevButton(category)" class="btn bgm-black c-white f-20 hidden-xs hidden-sm" ng-if="category.totalItems >= scrollValue"><i class="zmdi zmdi-chevron-left zmdi-hc-fw"></i></button>
+            <button ng-click="getBoysenDataSpecific(category);" class="btn bgm-black c-white f-20 hidden-xs hidden-sm m-r-30" ng-if="category.totalItems >= scrollValue"><i class="zmdi zmdi-chevron-right zmdi-hc-fw"></i></button>
+          </span>
+      </h3>
+      <div class="scrollable-content p-l-5 p-r-5" id="{{category.categoryUrl}}" on-scroll="checkIfMaxScroll(category)">
+            <div ng-repeat="boysen in category.dataArray track by $index" class="item gridItem" style="text-align: center;">
+              <span ng-if="boysen.geocategory_id == null">
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:category.categoryUrl,title:boysen.permalink})">
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:category.categoryUrl,title:boysen.permalink})">
+                  <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+              </span>
+              <span ng-if="boysen.geocategory_id != null">
+                <!-- <span ng-if="boysen.ipContry == 'PH'">
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:category.categoryUrl,title:boysen.permalink})">
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:category.categoryUrl,title:boysen.permalink})">
+                    <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+                </span>
+                <span ng-if="boysen.ipContry != 'PH' && (category.category_name='Recently Added' || category.category_name='Box Office Presents' || category.category_name='Binge' || category.category_name='Binge')">
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ng-click="setGeoBlock()">
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ng-click="setGeoBlock()">
+                  <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+                </span> -->
+
+
+
+              <span ng-if="boysen.ipContry == 'PH'">
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:category.categoryUrl,title:boysen.permalink})">
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:category.categoryUrl,title:boysen.permalink})">
+                  <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+              </span>
+
+
+                <span ng-if="boysen.ipContry != 'PH' && category.geoAccess == ''">
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'"
+                    src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:category.categoryUrl,title:boysen.permalink})">
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'"
+                    src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:category.categoryUrl,title:boysen.permalink})">
+                  <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+                </span>
+               
+              <!-- <span ng-if="boysen.ipContry != 'PH' && (category.categoryName == 'Boysen Now' || category.categoryName == 'Boysen Classics' || category.categoryName == 'Boysen Beats' || category.categoryName == 'Boysen DIY' || category.categoryName == 'Be Heard' || category.categoryName == 'Be Better')"> -->
+              <span ng-if="boysen.ipContry != 'PH' && category.geoAccess == 'GLOBAL'">
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:category.categoryUrl,title:boysen.permalink})">
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:category.categoryUrl,title:boysen.permalink})">
+                  <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+              </span>
+
+
+              <!-- <span ng-if="boysen.ipContry != 'PH' && (category.categoryName == 'Recently Added' || category.categoryName == 'Box Office Presents' || category.categoryName == 'Binge' || category.categoryName == 'Big Time Bouts' || category.categoryName == 'Brave and Bold' || category.categoryName == 'Beyond Borders')">              -->
+              <span ng-if="boysen.ipContry != 'PH' && category.geoAccess == 'PH'">             
+                <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ng-click="setGeoBlock()">
+                <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ng-click="setGeoBlock()">
+                <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+              </span>
+
+
+              </span>
+            </div>
+        </div>
+      </div>
+
+      <div id="grid-content" class="bgm-black"  style="min-height: 300px;" ng-if="specificView">        
+        <h3 class="goFultura c-white categoryIndention p-l-5 p-t-5">
+          {{ categoryTitle | uppercase }}                   
+        </h3>
+        <div class="gridContent">
+            <div class="gridItemCategory" ng-repeat="boysen in specificCategoryAllData track by $index">
+                <span ng-if="boysen.geocategory_id == null">
+                  <img class="imgFitToGridItem" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:categoryUrl,title:boysen.permalink})">
+                  <img class="imgFitToGridItem" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:categoryUrl,title:boysen.permalink})">
+                  <img class="imgFitToGridItem tile__img4" ng-if="boysen.content_types_id == 'no'">
+                </span>
+                <span ng-if="boysen.geocategory_id != null">
+                  <!-- <span ng-if="boysen.ipContry == 'PH'">
+                    <img class="imgFitToGridItem" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:categoryUrl,title:boysen.permalink})">
+                    <img class="imgFitToGridItem" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:categoryUrl,title:boysen.permalink})">
+                    <img class="imgFitToGridItem tile__img4" ng-if="boysen.content_types_id == 'no'">
+                  </span>
+                  <span ng-if="boysen.ipContry != 'PH'">
+                      <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ng-click="setGeoBlock()">
+                      <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ng-click="setGeoBlock()">
+                      <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+                  </span> -->
+                
+
+                  <!-- <span ng-if="boysen.ipContry == 'PH'">
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:category.categoryUrl,title:boysen.permalink})">
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:category.categoryUrl,title:boysen.permalink})">
+                    <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+                </span>
+                 
+                <span ng-if="boysen.ipContry != 'PH' && (categoryTitle == 'Boysen Now' || categoryTitle == 'Boysen Classics' || categoryTitle == 'Boysen Beats' || categoryTitle == 'Boysen DIY' || categoryTitle == 'Be Heard' || categoryTitle == 'Be Better')">
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:category.categoryUrl,title:boysen.permalink})">
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:category.categoryUrl,title:boysen.permalink})">
+                    <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+                </span>
+  
+  
+                <span ng-if="boysen.ipContry != 'PH' && (categoryTitle == 'Recently Added' || categoryTitle == 'Box Office Presents' || categoryTitle == 'Binge' || categoryTitle == 'Big Time Bouts' || categoryTitle == 'Brave and Bold' || categoryTitle == 'Beyond Borders')">             
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ng-click="setGeoBlock()">
+                  <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ng-click="setGeoBlock()">
+                  <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+                </span> -->
+                
+                  
+                  <span ng-if="boysen.ipContry == 'PH'">                    
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'"
+                      src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:category.categoryUrl,title:boysen.permalink})">
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'"
+                      src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:category.categoryUrl,title:boysen.permalink})">
+                    <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+                  </span>
+                  
+                  <span
+                    ng-if="boysen.ipContry != 'PH' && boysenGeoAccess == ''">                    
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'"
+                      src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:category.categoryUrl,title:boysen.permalink})">
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'"
+                      src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:category.categoryUrl,title:boysen.permalink})">
+                    <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+                  </span>
+
+                    <span ng-if="boysen.ipContry != 'PH' && boysenGeoAccess == 'GLOBAL'">                      
+                      <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'"
+                        src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:category.categoryUrl,title:boysen.permalink})">
+                      <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'"
+                        src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:category.categoryUrl,title:boysen.permalink})">
+                      <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+                    </span>
+                  
+                  
+                  <span
+                    ng-if="boysen.ipContry != 'PH' && boysenGeoAccess == 'PH'">                    
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '1'"
+                      src="{{boysen.poster_url}}" ng-click="setGeoBlock()">
+                    <img class="home-img h-100" sb-load="onImgLoad($event)" ng-if="boysen.content_types_id == '3'"
+                      src="{{boysen.poster_url}}" ng-click="setGeoBlock()">
+                    <img class="home-img h-100" ng-if="boysen.content_types_id == 'no'">
+                  </span>
+
+                </span>
+            </div>
+        </div>
+      </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,165 @@
+<div class="m-20" ng-init="getUserData();getAdminUsers();getUserRoleList();">
+    <div class="w-100">
+        <ul class="tab-nav tn-justified">
+            <li ng-class="{'active' : navigationState == 'MAIN USERS'}" data-ng-click="getUserData();"  heading="MAIN USERS" active="tab.active" class="ng-isolate-scope branchTab">
+                <a href="" class="ng-binding c-rb">MAIN USERS</a>
+            </li>
+            <li ng-class="{'active' : navigationState == 'ADMIN USERS'}" ng-if="restrictUser" data-ng-click="getAdminUsers();" heading="ADMIN USERS" active="tab.active " class="ng-isolate-scope branchTab active">
+                <a href="" class="ng-binding c-rb">ADMIN USERS</a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="card p-t-20" ng-if="navigationState == 'MAIN USERS'">
+        <div class="card-header">
+            <h1>User Management</h1>
+
+            
+            <span class="pull-right">
+                Total Users : {{ userStats.totalUsers }} | 
+                Social Login Users : {{ userStats.socialTotal }} | 
+                Manual Login Users : {{ userStats.manualTotal }} | 
+                Female Users : {{ userStats.femaleTotal }} | 
+                Male Users :  {{ userStats.maleTotal }}
+            </span>
+        </div>
+        <br>
+        <hr/>
+        <div class="p-30 row">
+            <div class="col-md-1">
+                <h4>Filter:</h4>
+            </div>
+            
+            
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="fg-line">
+                        <div id="typeContainer" class="select">
+                            <select id="type" class="form-control" ng-model="filterParams.filter_type">
+                                <option value="name">Name</option>
+                                <option value="date">Date</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 no-padding" ng-if="filterParams.filter_type == 'name'">
+                <div class="fg-line">
+                    <input type="input" placeholder="Name" ng-model="filterParams.comment_name_filter" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3 no-padding" ng-if="filterParams.filter_type == 'date'">
+                <div class="form-group fg-line">
+                    <input type="text" ng-model="filterParams.comment_date_filter_from" class="form-control ng-isolate-scope"
+                        data-input-mask="{mask: '0000-00-00'}" placeholder="Date From: (YYYY-MM-DD)" maxlength="10" autocomplete="off">
+                </div>
+            </div>
+            <div class="col-md-3 no-padding" ng-if="filterParams.filter_type == 'date'">
+                <div class="form-group fg-line">
+                    <input type="text" ng-model="filterParams.comment_date_filter_to" class="form-control ng-isolate-scope"
+                        data-input-mask="{mask: '0000-00-00'}" placeholder="Date To: (YYYY-MM-DD)" maxlength="10" autocomplete="off">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn" ng-click="getUserData()">Filter</button>
+                <button class="btn" ng-click="exportMainUsers()">Export</button> 
+                 
+            </div>
+           
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table ng-table="tableBasic" class="table table-striped table-vmiddle">
+                    <tr ng-repeat="w in userList track by $index">
+                        <td data-title="'Email'">{{ w.email }}</td>
+                        <td data-title="'Name'">
+                            {{ w.firstname + " " + w.lastname }}
+                        </td>
+                        <td data-title="'Gender'" style="text-transform: capitalize;">
+                            {{ w.gender | genderFilter }}
+                        </td>
+                        <td data-title="'Year'" style="text-transform: capitalize;">
+                            {{ w.birthyear | birthyearFilter }}
+                        </td>
+                        <td data-title="'Registration Type'">{{ w.profile_pic == null ? "Manual" : "Social" }}</td>
+                        <td data-title="'Registered At'">{{ w.registered_at }}</td>
+                        <!-- <td data-title="'Registration Type'">{{ w.birthyear == 'none' ? 'Social' : 'Manual' }}</td>
+                        <td data-title="'Gender'" style="text-transform: uppercase;">{{ w.gender }}</td>
+                        <td data-title="'Birthyear'" style="text-transform: uppercase;">{{ w.birthyear == 'none' ? '' : w.birthyear }}</td> -->
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card p-t-20" ng-if="navigationState == 'ADMIN USERS'">
+            <div class="card-header">
+                <h1 style="font-size:18px;">Admin User Management</h1>
+                <hr>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4 p-30">
+                    <div class="card-padding m-t-20">
+                        <div class="form-group fg-float">
+                            <div id="urlContainer" ng-class="{'fg-toggled' : adminForm.email }" class="fg-line">
+                                <input class="form-control fg-input" type="text" ng-model="adminForm.email">
+                                <label class="fg-label">Email</label> 
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group fg-float">
+                            <div id="url2Container" ng-class="{'fg-toggled' : adminForm.username }" class="fg-line">
+                                <input class="form-control fg-input" type="text" ng-model="adminForm.username">
+                                <label class="fg-label">Username</label>
+                            </div>
+                        </div>
+            
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="fg-line">
+                                    <div id="typeContainer" ng-class="{'fg-toggled' : adminForm.admin_role }" class="select">
+                                        <select id="type" class="form-control" ng-model="adminForm.admin_role">
+                                            <option disabled selected value=""> - - User Role - - </option>
+                                            <option ng-repeat="x in adminRoleList" value="{{ x.id }}">{{ x.name }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="btn-group btn-group-lg pull-right">
+                            <button type="button" class="btn btn-primary waves-effect" ng-click="insertAdminUsers();" ng-if="!editMode">Create</button>
+                        </div>
+
+                        <div class="btn-group btn-group-lg pull-right">
+                            <button type="button" class="btn btn-primary waves-effect" ng-click="editAdminUsers();" ng-if="editMode">Save</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-8 p-l-0" style="border-left: 1px solid black;">
+                    <div class="table-responsive">
+                        <table ng-table="tableBasic" class="table table-striped table-vmiddle">
+                            <tr ng-repeat="w in adminUserList track by $index">
+                                <td data-title="'Username'">{{ w.username }}</td>
+                                <td data-title="'Email'">{{ w.email }}</td>
+                                <td data-title="'Role'">{{ w.role_name }}</td>
+                                <td data-title="'Status'">{{ w.is_activated ? "Active" : "Inactive" }}</td>
+                                
+                                <td>
+                                    <button ng-disabled="w.username == 'admin'" type="button" class="btn btn-default" tooltip-placement="top" uib-tooltip="Delete" ng-click="deleteUser(w.id,w.id_crypt);"><i
+                                        class="zmdi zmdi-delete"></i></button>
+                                    <button ng-disabled="w.username == 'admin'" type="button" class="btn btn-default" tooltip-placement="top" uib-tooltip="Edit" ng-click="editModeBanner(w.id,w.id_crypt,w.username,w.email,w.admin_role,w.is_activated);"><i
+                                        class="zmdi zmdi-edit zmdi-hc-fw"></i></button>
+                                    <button ng-disabled="w.username == 'admin'" ng-if="!w.is_activated" type="button" class="btn btn-default" tooltip-placement="top" uib-tooltip="Resend Set Password Email" ng-click="resendEmail(w.username,w.email,w.role_name,w.is_activated);"><i
+                                        class="zmdi zmdi-email zmdi-hc-fw"></i></button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>

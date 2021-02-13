@@ -1,0 +1,63 @@
+<div id="banner-carousel" ng-init="getBannerSlides();getBoysenNowList();">
+  <!--                         -->
+  <!--          BANNER         -->
+  <!--                         -->
+  <uib-carousel>
+    <uib-slide ng-repeat="slide in slides" active="slide.active" index="$index" >
+      <img class="carousel-image" ng-src="{{slide.original}}" style="margin:auto;height:calc(100vh / 1.5);width: auto">
+      <div class="carousel-caption" >
+        <h1 class="carousel-title goBebas">{{slide.banner_text_heading}}</h1>
+        <p class="m-t-10 m-b-10">{{slide.banner_text_description}}</p>
+        <button ng-if="slide.banner_array_link[3] == 'series'" class="btn f-700" ui-sref="main.watchNowSeries({category:slide.banner_array_link[4],title:slide.banner_array_link[5]})">
+          <span>
+            <img lazy-load
+              class="play"
+              src="/img/Play Button.png"
+              alt=""/>
+            </span> PLAY
+        </button>
+        <button ng-if="slide.banner_array_link[3] == 'movie'" class="btn f-700" ui-sref="main.watchNowSeries({category:slide.banner_array_link[4],title:slide.banner_array_link[5]})">
+          <span>
+            <img lazy-load
+              class="play"
+              src="/img/Play Button.png"
+              alt=""/>
+            </span> PLAY
+        </button>
+      </div>
+    </uib-slide>
+  </uib-carousel>
+
+
+
+  <!--                         -->
+  <!--      END BANNER         -->
+  <!--                         -->
+  <!--      CATEGORY           -->
+  <!--                         -->
+  <div class="watch-for-free bgm-yellow large-desktop-p-t-0 desktop-p-t-0 large-desktop-p-b-25 desktop-p-b-25 m-b-10">
+    <div class="watch-for-free-label goFultura"> Watch For Free</div> <br>
+    <div class="watch-for-free-category-label goFultura c-black">Browse Our Categories</div>
+    <div class="row large-desktop-p-t-25 desktop-p-t-25" id="category-selection">
+      <button class="btn bgm-yellow c-black large-desktop-m-l-25 desktop-m-l-25 catogory-buttons" ng-repeat="category in categoryList" ui-sref="main.category({category:category.categoryUrl})"> {{ category.categoryName }} </button>
+    </div>
+  </div>
+  <!--                         -->
+  <!--      END CATEGORY       -->
+  <!--                         -->
+  <!--       GRID LIST         -->
+  <!--                         -->
+  <div id="grid-list" class="bgm-black c-white large-desktop-p-25 desktop-p-25 divCategory" style="width:100%;">
+    <div class="opacity-none" id="grid-content">
+
+      <h3 class="c-white">
+        {{ categoryTitle | uppercase }}
+      </h3>
+      <div class="gridContent">
+          <div class="gridItemCategory" ng-repeat="boysen in boysenNowList" ui-sref="main.watchNowMovie({category:categoryTitleRaw,title:boysen.permalink})">
+            <img class="imgFitToGridItem" hires="{{boysen.poster_url}}" src="{{placeHolderImg.poster_url}}">
+          </div>
+      </div>
+    </div>
+
+</div>

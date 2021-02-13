@@ -1,0 +1,35 @@
+<div class="" style="background: #DCDCDC; min-height:92vh;">
+  <div class="text-center" style="display: table; width: 50%; margin: 0 auto; min-height: 92vh;" data-ng-controller="loginCtrl">
+      <form class="form-signin" style="display: table-cell; text-align: center; vertical-align: middle;">
+          <img src="/img/Logos/Studio B Logo.png" alt="">
+          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <div class="m-b-10 m-t-20">
+              <div class="fg-line">
+                  <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Username"
+                      ng-model="login.username"
+                      my-enter="goLogin();"
+                  >
+              </div>
+          </div>
+          <div class="m-b-20 m-t-10">
+              <div class="fg-line">
+                  <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                      ng-model="login.password"
+                      my-enter="goLogin();"
+                  >
+              </div>
+          </div>
+          <div class="clearfix"></div>
+
+          <button type="button" class="btn btn-lg btn-primary btn-block" ng-click="goLogin();">Sign in</button>
+      </form>
+  </div>
+</div>
+<ui-view></ui-view>

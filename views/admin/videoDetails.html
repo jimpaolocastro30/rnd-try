@@ -1,0 +1,130 @@
+<div class="m-20" data-ng-controller="dashboardCtrl" ng-init="getBoysenSpecificData()">
+    <div class="p-20">
+
+        <div class="m-20 row" ng-if="contentMainDetail.content_types_id == '3'">
+            <div class="col-md-6">
+                <select class="form-control m-20" ng-model = "seasonEpisodes" ng-change="getSeriesEpisodes(seasonEpisodes);">
+                    <option ng-repeat="w in contentSeasonCount | reverse" value="{{ w }}">
+                        Season {{ w }}
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <select class="form-control m-20" ng-model="selectedEpisode" ng-change="getEpisodeDetails(selectedEpisode)">
+                    <option ng-repeat="w in contentEpisodeList | reverse" value="{{ w }}">
+                            {{ "Episode " + w.episode_number }} {{ w.episode_title }}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="m-b-10 row" ng-if="contentMainDetail.content_types_id == '3'">
+            <div class="col-md-2">
+                <img src="{{ contentDetail.poster_url == null ? contentDetail.poster : contentDetail.poster_url }}" ALT="img" class="imgFitToGridItem">
+            </div> 
+            <div class="col-md-10">
+                <h1 class="m-0">{{ contentDetail.episode_title == null ? contentDetail.name : contentDetail.episode_title }}</h1>
+                <p>Description: {{ contentDetail.episode_story == null ? contentDetail.story : contentDetail.episode_story }}</p>
+                <p>Muvi Id: {{ contentDetail.id == null ? contentDetail.id : contentDetail.id }}</p>
+            </div>
+        </div>
+
+        <div class="m-b-10 row" ng-if="contentMainDetail.content_types_id == '1'">
+                <div class="col-md-2">
+                    <img src="{{ contentDetail.poster }}" ALT="Larry" class="imgFitToGridItem">
+                </div> 
+                <div class="col-md-10">
+                    <h1 class="m-0">{{ contentDetail.name }}</h1>
+                    <p>Description: {{ contentDetail.story }}</p>
+                    <p>Muvi Id: {{ contentDetail.id }}</p>
+                </div>
+            </div>
+
+        <div class="row" ng-if="contentDetail.resolution != null">
+            <hr style=" border: 1px solid black; "/>
+
+            <h3>Video URL</h3>
+            <table class="table table-striped table-vmiddle">
+                <tr ng-repeat="w in contentDetail.resolution">
+                    <td style="width:10%;">{{ w.resolution }}</td>
+                    <td style="width:90%;word-break:break-word;"><a href="{{ w.url }}" target="_blank">{{ w.url }}</a></td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="row" ng-if="adminRoleAccess_View">
+            <hr style=" border: 1px solid black; "/>
+            <div class="col-md-7">
+                <h3>Video Comment <span ng-if="contentTotalComment != 0">({{ contentTotalComment }})</span></h3>
+                <table ng-table="tableBasic2" class="table table-striped table-vmiddle bgm-white" id="commentDiv">
+                    <tr ng-repeat="w in contentComment">
+                        <td data-title="'User'" style="width: 12%;" class="p-20 text-center"> 
+                            <img ng-src="{{ w.userImage }}" style="border-radius: 50%" class="image-fit-to-width">
+                            <h4>{{ w.user }}</h4>
+                        </td>
+                        <td data-title="'Content Details'" style="width: 48%;">
+                            <p>COMMENT CONTENT: {{ w.userComment }}</p>
+                            <p>POSTED AT: {{ mactrl.calculateDateConvertion(w.posted_at) }} | {{ w.posted_at }}</p>
+                            <p>SUBCOMMENT: {{ w.comment_count }}
+                                <span ng-if="w.comment_count != 0" ng-click="getSubComment(w)"><a href>View Subcomment/s</a></span>
+                            </p>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="fg-line">
+                                        <input type="input" placeholder="Reply" ng-model="w.reply" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-block" ng-click="replyComment(w,'details')"> Reply</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td ng-if="adminRoleAccess_delete" data-title="'Actions'" style="width: 10%;">
+                            <button class="btn btn-block" ng-click="deleteComment(w.id,w.id_crypt,'details')"> Delete</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-md-5" ng-if="subComment.length != 0">
+                <h3>SubComment <span ng-if="subCommentTotal != 0">({{ subCommentTotal }})</span></h3>
+                <table class="table table-striped table-vmiddle">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Content Details</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="w in subComment">
+                            <td data-title="'User'" style="width: 12%;" class="p-20 text-center"> 
+                                <img ng-src="{{ w.userImage }}" style="border-radius: 50%" class="image-fit-to-width">
+                                <h4>{{ w.user }}</h4>
+                            </td>
+                            <td data-title="'Content Details'" style="width: 48%;">
+                                <p>COMMENT CONTENT: {{ w.userComment }}</p>
+                                <p>POSTED AT: {{ mactrl.calculateDateConvertion(w.posted_at) }} | {{ w.posted_at }}</p>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="fg-line">
+                                            <input type="input" placeholder="Reply" ng-model="w.reply" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-block" ng-click="replyComment(w,'subcomment')"> Reply</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td ng-if="adminRoleAccess_delete" data-title="'Actions'" style="width: 10%;">
+                                <button class="btn btn-block" ng-click="deleteComment(w.id,w.id_crypt,'details')"> Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,345 @@
+body{
+	font-family:Arial, sans;
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	width:100%;
+	height:100%;
+	background-color:#999999;
+	line-height:22px;
+	color:#eaeaea;
+}
+
+@font-face{
+	font-family:myFont;
+	src: url(../font/Lato-Lig.ttf);
+}
+
+body a:link    {color:#000000 !important;}
+body a:visited {color:#000000 !important;}
+body a:hover   {color:#009aff !important;}
+body a:active  {color:#000000 !important;}
+
+#videoHolder{
+	margin:auto;
+	margin-bottom:29px;
+}
+
+#examplesGrid{
+	position:relative;
+	overflow:hidden;
+	margin-top:28px;
+	margin-bottom:32px;
+}
+
+#examplesWrapper{
+	background-color:#FFFFFF;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+/* Info */
+#examplesMainText{
+	position:relative;
+	margin:0px;
+	padding:0px;
+}
+
+
+ /* Header */
+#mainHeader{
+	position:relative;
+	overflow:hidden;
+	width:100%;
+	height:132px;
+	background-color:#FFFFFF;
+}
+
+ #logoImage{
+	position:absolute;
+	height:132px;
+}
+
+#byFWD{
+	position:absolute;
+}
+
+/* Menu holder */
+#menuHolder{
+	overflow:visible;
+	position:relative;
+	width:100%;
+}
+
+/* Product holder */
+#productWrapper{
+	background-image:url("../graphics/mainBk.jpg");
+	background-repeat:repeat-x repeat-y;
+	background-position:50% 0%;
+	padding-bottom:50px;
+}
+
+#myDivMainHolder{
+	overflow:hidden;
+	margin-left:7px;
+	margin-right:8px;
+}
+
+#myDiv{
+	position:relative;
+}
+
+#firstExample{
+	position:relative;
+	display:inline-block;
+	background-color:#000000;
+	color:#b6b6b6;
+	padding:4px;
+	padding-left:7px;
+	padding-right:7px;
+	margin-top:50px;
+	margin-bottom:10px;
+}
+
+#myDivMainHolder2{
+	overflow:hidden;
+	margin-left:7px;
+	margin-right:8px;
+}
+
+#myDiv2{
+	position:relative;
+	width:500px;
+}
+
+#secondExample{
+	position:relative;
+	display:inline-block;
+	background-color:#000000;
+	color:#b6b6b6;
+	padding:4px;
+	padding-left:7px;
+	padding-right:7px;
+	margin-top:50px;
+	margin-bottom:10px;
+}
+
+#myDiv3{
+	position:relative;
+	width:500px;
+}
+
+#thirdExample{
+	position:relative;
+	display:inline-block;
+	background-color:#000000;
+	color:#b6b6b6;
+	padding:4px;
+	padding-left:7px;
+	padding-right:7px;
+	margin-top:50px;
+	margin-bottom:10px;
+}
+
+#myDivMainHolder3{
+	overflow:hidden;
+	margin-left:7px;
+	margin-right:8px;
+}
+
+/* API */
+#apiMainText{
+	display:block;
+	position:relative;
+	margin-top:-5px;
+}
+
+#apiMainVideoHolder{
+	overflow:hidden;
+	position:relative;
+	padding-bottom:45px;
+}
+
+#apiLogger{
+	position:relative;
+	overflow:hidden;
+	background-color:#FFFFFF;
+}
+
+#textApiLogger{
+	position:absolute;
+	overflow:visible;
+	color:#000000;
+	margin-top:0px;
+	margin:5px;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+#apiButtonsHolder{
+	width:100%;
+}
+
+#myDivAPI{
+	position:relative;
+}
+
+/* Info */
+#mainInfoHolder{
+	position:relative;
+	overflow:hidden;
+	margin:0px;
+	padding:0px;
+	background-color:#dfdfdf;
+	color:#5b5b5b;
+}
+
+#whatIsMainText{
+	position:relative;
+	margin-top:-5px;
+}
+
+#mainFeatureTableHolder{
+	position:relative;
+	margin:auto;
+	padding-bottom:15px;
+}
+
+table{
+	border-collapse:collapse;
+	text-align:left;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+tr{
+	 border-top:0px;
+	 text-align:left;
+	 margin:0px;
+	padding:0px;
+}
+
+td{
+	text-align:left;
+	vertical-align:top;
+	margin:0px;
+	padding:0px;
+}
+
+td p{
+	margin:0px;
+	padding:0px;
+	margin-bottom:4px;
+}
+
+#specialNotesMainHolder{
+	background-color:#FFFFFF;
+	color:#666666;
+}
+
+#specialNotes{
+	position:relative;
+	margin:0px;
+	padding:0px;
+}
+
+.specialNotesP{
+	margin:0px;
+	padding:0px;
+	padding-bottom:5px;
+}
+.fistTd{
+	width:47%;
+}
+
+.secondTd{
+	width:6%;
+}
+
+/* Classes */
+.plusImage{
+	position:relative;
+	margin-right:6px;
+	width:7px;
+	height:7px;
+	top:-1px;
+}
+
+#lastP{
+	padding-bottom:16px;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+
+/* Color and style */
+.myBold{
+	font-weight:bold;
+}
+
+.dark{
+	color:#000000;
+}
+
+.white{
+	color:#0099FF;
+}
+
+.whiteDeader{
+	color:#FFFFFF;
+}
+
+
+.headerText{
+	font-family:myFont, Arial;
+	font-size:22px;
+	color:#000000;
+	text-align:center;
+	margin-left:6px;
+	margin-right:6px;
+	margin-bottom:20px;
+}
+
+.apiHeaderText{
+	font-family:myFont, Arial;
+	font-size:22px;
+	color:#000000;
+	text-align:center;
+	margin-left:6px;
+	margin-right:6px;
+	margin-bottom:20px;
+}
+
+.specialNotesHeaderText{
+	font-family:myFont, Arial;
+	font-size:22px;
+	color:#000000;
+	text-align:center;
+	margin-left:6px;
+	margin-right:6px;
+	margin-bottom:20px;
+	margin-top:45px;
+}
+
+.specialNotesHeaderText{
+	font-family:myFont, Arial;
+	font-size:22px;
+	color:#000000;
+	text-align:center;
+	margin:0px;
+	padding:0px;
+	margin-left:6px;
+	margin-right:6px;
+	padding-top:20px;
+	margin-bottom:20px;
+}
+
+.headerTextGrid{
+	font-family:myFont, Arial;
+	font-size:22px;
+	color:#0099FF;
+	text-align:center;
+	margin-left:6px;
+	margin-right:6px;
+	margin-top:35px;
+}

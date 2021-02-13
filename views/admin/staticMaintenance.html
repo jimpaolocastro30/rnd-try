@@ -1,0 +1,41 @@
+<div class="container-fluid p-b-20" ng-init="getStaticMaintenance()">
+    <div class="row">
+
+        <div class="card-header">
+            <h1 style="font-size:18px;">Static Content Management</h1>
+            <hr />
+        </div>
+
+        <div class="col-md-4" >
+            <h3>About Us</h3>
+            <div style="height: 500px; overflow: scroll" text-angular ng-model="aboutUs"></div>
+            <button class="btn pull-right m-t-10" ng-click="saveStaticMaintenance('aboutUs')">Save</button>
+        </div>
+        <div class="col-md-4">
+            <h3>Privacy Policy</h3>
+            <div style="height: 500px; overflow: scroll" text-angular ng-model="privacyPolicy"></div>
+            <button class="btn pull-right m-t-10" ng-click="saveStaticMaintenance('privacyPolicy')">Save</button>
+        </div>
+        <div class="col-md-4">
+            <h3>Terms of Use</h3>
+            <div style="height: 500px; overflow: scroll" text-angular ng-model="termsOfUse"></div>
+            <button class="btn pull-right m-t-10" ng-click="saveStaticMaintenance('termsOfUse')">Save</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Green Banner Text</h3>
+            <div class="form-group">
+                <div class="fg-line">
+                    <input type="text" class="form-control input-lg" ng-model="greenBannerContent">
+                </div>
+            </div>
+            <button class="btn pull-right m-t-10" ng-click="saveStaticMaintenance('greenBannerContent')">Save</button>
+        </div>
+        <div class="col-md-4">
+                <h3>FAQ Text</h3>
+                <div style="height: 500px; overflow: scroll" text-angular ng-model="faqContent"></div>
+                <button class="btn pull-right m-t-10" ng-click="saveStaticMaintenance('faqContent')">Save</button>
+            </div>
+    </div>
+</div>

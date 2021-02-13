@@ -1,0 +1,71 @@
+<div class="row large-desktop-m-t-25 desktop-m-t-25 tablet-portrait-m-t-25 mobile-portrait-m-t-25 bgm-black p-b-10" style="border: 1px solid white">
+
+    <div class="row large-desktop-m-25 desktop-m-25 tablet-portrait-m-25 mobile-portrait-m-25">
+        <h3 ng-if="totalComments > 0" class="c-white large-desktop-p-b-25 desktop-p-b-25" style="border-bottom: 1px solid white">{{ totalComments + ((totalComments > 1) ? ' Comments' : ' Comment')}}</h3>
+        <h3 ng-if="totalComments == 0" class="c-white large-desktop-p-b-25 desktop-p-b-25" style="border-bottom: 1px solid white">{{ ((totalComments > 1) ? ' Comments' : ' Comment')}}</h3>
+    </div>
+
+    <div class="row landscape-comment-box large-desktop-m-b-30 desktop-m-b-30" style="height: 80px;" ng-if="isLoggedIn" >
+      <div class="col-md-1 col-sm-1 large-desktop-m-25 desktop-m-25 desktop-m-25 tablet-portrait-m-l-30 tablet-portrait-m-t-10 mobile-portrait-m-l-10 mobile-portrait-m-t-10 web-no-padding comment-users-icon" style="height: 100%;">
+          <img ng-src="{{ profilePicture }}" style="border-radius: 50%" class="image-fit-to-width">
+      </div>
+      <div class="col-md-9 col-sm-9 large-desktop-m-t-25 desktop-m-t-25 mobile-portrait-m-t-10 web-no-padding comment-users-content">
+        <textarea style="resize: none;" class="c-black comment-textarea" id="main-comment" ng-model="$parent.comment"></textarea>
+        <button class="btn bgm-green c-white pull-right comment-button large-desktop-m-t-10 desktop-m-t-10 large-desktop-m-t-10 desktop-m-r-30 tablet-portrait-m-t-10 tablet-portrait-m-r-30 goFiraSans" ng-click="postComment()">COMMENT</button>
+        <button ng-click="$parent.comment = '' " class="btn bgm-black c-white pull-right large-desktop-m-t-10 desktop-m-t-10 large-desktop-m-t-10 desktop-m-r-30 tablet-portrait-m-t-10 tablet-portrait-m-r-30">CANCEL</button>
+      </div>
+    </div>
+
+    <br><br>
+    <div class="row m-l-25" ng-repeat="comment in commentData track by $index" ng-if="comment.comment_id == null">
+        <div class="col-md-1 tablet-portrait-m-l-30 col-sm-1 large-desktop-m-25 desktop-m-25 mobile-portrait-m-l-10 mobile-portrait-m-t-10 web-no-padding comment-users-icon" style="height: 100%;">
+            <img style="border-radius: 50%;" ng-src="{{ comment.userImage }}" class="image-fit-to-width">
+        </div>
+        <div class="col-md-9 col-sm-9 large-desktop-m-t-25 desktop-m-t-25 no-padding comment-users-content">
+          <span class="c-yellow">{{ comment.user }}</span><span class="c-gray" style="margin-left: 1rem;">{{ mactrl.calculateDateConvertion(comment.posted_at) }}</span>
+          <div class="comment c-white tablet-portrait-m-0 goFiraSans">
+                <!-- <span ng-show="!comment.edit">{{ comment.userComment }}</span> -->
+                <p ng-show="!comment.edit" dd-text-collapse dd-text-collapse-max-length="230" dd-text-collapse-text="{{ comment.userComment }}"></p>
+                <textarea style="resize: none;" ng-show="comment.edit" class="c-black comment-textarea " ng-model="comment.childrenCommentUpdate"></textarea>
+          </div>
+          <span>
+              <button ng-click="likeUnlikeComment('like',comment);" ng-class="{'c-yellow' : comment.like_data.user_like.like_type == 'like' }" class="btn bgm-black c-white tablet-portrait-p-0 no-padding" style="font-size: 3rem" ng-if="isLoggedIn"><i class="zmdi zmdi-chevron-up zmdi-hc-fw"></i><span class="likeUnlikeCount">{{ comment.like_data.total_like == 0 ? "" : comment.like_data.total_like }}</span></button>
+              <button ng-click="likeUnlikeComment('dislike',comment);" ng-class="{'c-yellow' : comment.like_data.user_like.like_type == 'dislike' }" class="btn bgm-black c-white tablet-portrait-p-0 no-padding" style="font-size: 3rem" ng-if="isLoggedIn"><i class="zmdi zmdi-chevron-down zmdi-hc-fw"></i><span class="likeUnlikeCount">{{ comment.like_data.total_dislike == 0 ? "" : comment.like_data.total_dislike }}</span></button>
+              <button class="btn bgm-black c-gray tablet-portrait-p-0" ng-click="comment.edit = !comment.edit;comment.childrenCommentUpdate = comment.userComment" ng-if="loggedData.user.user_id == comment.user_id"><i>Edit</i></button>
+              <button class="btn bgm-black c-gray tablet-portrait-p-0" ng-click="comment.show = !comment.show;" ng-if="isLoggedIn"><i>Reply</i></button>
+              <button class="btn bgm-green c-white pull-right comment-button large-desktop-m-t-10 desktop-m-t-10 large-desktop-m-t-10 desktop-m-r-30 tablet-portrait-m-t-10 tablet-portrait-m-r-30 goFiraSans" ng-show="comment.edit" ng-click="updateComment(comment)">UPDATE</button>
+
+            <div class="row m-l-25" ng-repeat="comment2 in commentData" ng-show="comment2.comment_id == comment.id">
+                <div class="col-md-1 tablet-portrait-m-l-30 col-sm-1 large-desktop-m-25 desktop-m-25 mobile-portrait-m-l-10 mobile-portrait-m-t-10 web-no-padding comment-users-icon" style="height: 100%;">
+                    <img style="border-radius: 50%;" ng-src="{{ comment2.userImage }}" class="image-fit-to-width">
+                </div>
+                <div class="col-md-9 col-sm-9 large-desktop-m-t-25 desktop-m-t-25 no-padding comment-users-content">
+                  <span class="c-yellow">{{ comment2.user }}</span><span class="c-gray" style="margin-left: 1rem;">{{ mactrl.calculateDateConvertion(comment2.posted_at) }}</span>
+                  <div class="comment c-white tablet-portrait-m-0 goFiraSans">
+                      <!-- <span ng-show="!comment2.edit">{{ comment2.userComment }}</span> -->
+                      <p ng-show="!comment2.edit" dd-text-collapse dd-text-collapse-max-length="230" dd-text-collapse-text="{{ comment2.userComment }}"></p>
+                      <textarea style="resize: none;" ng-show="comment2.edit" class="c-black comment-textarea " ng-model="comment2.childrenCommentUpdate"></textarea>
+                  </div>
+                  <span>
+                    <button ng-click="likeUnlikeComment('like',comment2);" ng-class="{'c-yellow' : comment2.like_data.user_like.like_type == 'like' }" class="btn bgm-black c-white tablet-portrait-p-0 no-padding" style="font-size: 3rem" ng-if="isLoggedIn"><i class="zmdi zmdi-chevron-up zmdi-hc-fw"></i><span class="likeUnlikeCount">{{ comment2.like_data.total_like == 0 ? "" : comment2.like_data.total_like }}</span></button>
+                    <button ng-click="likeUnlikeComment('dislike',comment2);" ng-class="{'c-yellow' : comment2.like_data.user_like.like_type == 'dislike' }" class="btn bgm-black c-white tablet-portrait-p-0 no-padding" style="font-size: 3rem" ng-if="isLoggedIn"><i class="zmdi zmdi-chevron-down zmdi-hc-fw"></i><span class="likeUnlikeCount">{{ comment2.like_data.total_dislike == 0 ? "" : comment2.like_data.total_dislike }}</span></button>
+                    <button class="btn bgm-black c-gray tablet-portrait-p-0" ng-click="comment2.edit = !comment2.edit;comment2.childrenCommentUpdate = comment2.userComment" ng-if="loggedData.user.user_id == comment2.user_id"><i>Edit</i></button>
+                    <button class="btn bgm-green c-white pull-right comment-button large-desktop-m-t-10 desktop-m-t-10 large-desktop-m-t-10 desktop-m-r-30 tablet-portrait-m-t-10 tablet-portrait-m-r-30 goFiraSans" ng-show="comment2.edit" ng-click="updateComment(comment2)">UPDATE</button>
+                </span>
+                </div>
+            </div>
+
+            <!-- comment field -->
+            <div class="m-l-25 large-desktop-m-t-25 desktop-m-t-25 mobile-portrait-m-t-10 web-no-padding comment-users-content" ng-if="comment.show">
+                <textarea class="c-black comment-textarea " ng-model="comment.childrenComment"></textarea>
+                <button class="btn bgm-green c-white pull-right comment-button large-desktop-m-t-10 desktop-m-t-10 large-desktop-m-t-10 desktop-m-r-30 tablet-portrait-m-t-10 tablet-portrait-m-r-30 m-b-20 goFiraSans" ng-click="postComment(comment)">COMMENT</button>
+                <button ng-click="comment.childrenComment = '';comment.show = !comment.show;" class="btn bgm-black c-white pull-right large-desktop-m-t-10 desktop-m-t-10 large-desktop-m-t-10 desktop-m-r-30 tablet-portrait-m-t-10 tablet-portrait-m-r-30 m-b-20">CANCEL</button>
+            </div>
+            <br>
+            <button class="btn bgm-green" ng-click="comment.hideRepliesButton = true;getComment(comment.id);" ng-if="comment.comment_count > 0 && !comment.hideRepliesButton"> Load Replies ({{comment.comment_count}})</button>
+          </span>
+        </div>
+
+    </div>
+    <button class="btn btn-block comment-button bgm-green m-t-20" ng-click="getComment()" ng-if="commentData.length < totalComments && commentData != null">LOAD MORE</button>
+  </div>

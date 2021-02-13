@@ -1,0 +1,257 @@
+
+<div class="container-fluid m-20 bgm-white">
+    <div class="card p-t-10">
+        <div class="card-header">
+            <h1 style="font-size:18px;">User Roles Management</h1>
+            <hr/>
+        </div>  
+        <div class="">  
+            <div class="col-md-4" ng-init="getUserRoleData();">
+                <div class="form-group fg-float">
+
+                    <div id="url2Container" class="fg-line">
+                        <input class="form-control fg-input" type="text" ng-model="roleName" placeholder = "Role Name">
+                        <!-- <label class="fg-label">Role Name</label> -->
+                    </div>
+
+                    <h3 style="font-size:16px;">Side Contents Management</h3>
+                        <label class="checkbox checkbox-inline m-r-5">
+                            <input type="checkbox" ng-model="roleField.side_content.view" value="option1">
+                            <i class="input-helper"></i>
+                            View
+                        </label>
+
+                        <label class="checkbox checkbox-inline m-r-10">
+                            <input type="checkbox" ng-model="roleField.side_content.create" value="option2">
+                            <i class="input-helper"></i>
+                            Create
+                        </label>
+
+                        <label class="checkbox checkbox-inline m-r-15">
+                            <input type="checkbox" ng-model="roleField.side_content.update" value="option3">
+                            <i class="input-helper"></i>
+                            Update
+                        </label>
+
+                        <label class="checkbox checkbox-inline m-r-20">
+                            <input type="checkbox" ng-model="roleField.side_content.delete" value="option4">
+                            <i class="input-helper"></i>
+                            Delete
+                        </label>
+                    
+
+                    <h3 style="font-size:16px;">Category Management</h3>
+                        <label class="checkbox checkbox-inline m-r-5">
+                            <input type="checkbox" ng-model="roleField.category.view" value="option1"><i class="input-helper"></i>View</label>
+                        
+                        <label class="checkbox checkbox-inline m-r-10">
+                            <input type="checkbox" ng-model="roleField.category.create" value="option2"><i class="input-helper"></i>Create</label>
+                        
+                        <label class="checkbox checkbox-inline m-r-15">
+                            <input type="checkbox" ng-model="roleField.category.update" value="option3"><i class="input-helper"></i>Update</label>
+                        
+                        <label class="checkbox checkbox-inline m-r-20">
+                            <input type="checkbox" ng-model="roleField.category.delete" value="option4">
+                            <i class="input-helper"></i>Delete</label>
+
+                    <h3 style="font-size:16px;">Banner Management</h3>
+                        <label class="checkbox checkbox-inline m-r-5">
+                            <input type="checkbox" ng-model="roleField.banner.view" value="option1">
+                            <i class="input-helper"></i>
+                            View
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-10">
+                            <input type="checkbox" ng-model="roleField.banner.create" value="option2">
+                            <i class="input-helper"></i>
+                            Create
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-15">
+                            <input type="checkbox" ng-model="roleField.banner.update" value="option3">
+                            <i class="input-helper"></i>
+                            Update
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-20">
+                            <input type="checkbox" ng-model="roleField.banner.delete" value="option4">
+                            <i class="input-helper"></i>
+                            Delete
+                        </label>
+
+                    <h3 style="font-size:16px;">Static Content Management</h3>
+                        <label class="checkbox checkbox-inline m-r-5">
+                            <input type="checkbox" ng-model="roleField.static_content.view" value="option1">
+                            <i class="input-helper"></i>
+                            View
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-15">
+                            <input type="checkbox" ng-model="roleField.static_content.update" value="option3">
+                            <i class="input-helper"></i>
+                            Update
+                        </label>
+
+                    <h3 style="font-size:16px;">Users Management</h3>
+                        <label class="checkbox checkbox-inline m-r-5">
+                            <input type="checkbox" ng-model="roleField.user.view" value="option1">
+                            <i class="input-helper"></i>
+                            View
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-10">
+                            <input type="checkbox" ng-model="roleField.user.create" value="option2">
+                            <i class="input-helper"></i>
+                            Create Admin User
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-15">
+                            <input type="checkbox" ng-model="roleField.user.update" value="option3">
+                            <i class="input-helper"></i>
+                            Update Admin User
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-20">
+                            <input type="checkbox" ng-model="roleField.user.delete" value="option4">
+                            <i class="input-helper"></i>
+                            Delete Admin User
+                        </label>
+
+                        <label class="checkbox checkbox-inline m-r-20">
+                            <input type="checkbox" ng-model="roleField.user.viewMainUser" value="option4">
+                            <i class="input-helper"></i>
+                            Main User View Only
+                        </label>
+
+                    <h3 style="font-size:16px;">Comment Management</h3>
+                        <label class="checkbox checkbox-inline m-r-5">
+                            <input type="checkbox" ng-model="roleField.comment.view" value="option1">
+                            <i class="input-helper"></i>
+                            View
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-5">
+                            <input type="checkbox" ng-model="roleField.comment.reply" value="option1">
+                            <i class="input-helper"></i>
+                            Reply
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-20">
+                            <input type="checkbox" ng-model="roleField.comment.delete" value="option4">
+                            <i class="input-helper"></i>
+                            Delete
+                        </label>
+
+                    <h3 style="font-size:16px;">Comment Filter Management</h3>
+                        <label class="checkbox checkbox-inline m-r-5">
+                            <input type="checkbox" ng-model="roleField.comment_filters.view" value="option1">
+                            <i class="input-helper"></i>
+                            View
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-10">
+                            <input type="checkbox" ng-model="roleField.comment_filters.create" value="option2">
+                            <i class="input-helper"></i>
+                            Create
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-15">
+                            <input type="checkbox" ng-model="roleField.comment_filters.update" value="option3">
+                            <i class="input-helper"></i>
+                            Update
+                        </label>
+                        
+                        <label class="checkbox checkbox-inline m-r-20">
+                            <input type="checkbox" ng-model="roleField.comment_filters.delete" value="option4">
+                            <i class="input-helper"></i>
+                            Delete
+                        </label>
+                </div>
+                <!-- <button ng-click="saveUserRole()"> Save </button> -->
+
+                    <div class="btn-group btn-group-lg pull-right">
+                        <button type="button" class="btn btn-primary waves-effect" ng-click="saveUserRole();">Create</button>
+                    </div>
+
+                    <div class="btn-group btn-group-lg pull-right">
+                        <button type="button" class="btn btn-primary waves-effect" ng-click="editUserRole();" ng-if="isEditActive">Edit</button>
+                    </div>
+
+
+            </div>
+
+
+            <div class="col-md-8 p-l-0" style="border-left: 1px solid black;">
+            
+                <div class="table-responsive">
+                    <table ng-table="tableBasic" class="table table-striped table-vmiddle">
+                        <tr ng-repeat="w in userRolesList track by $index">
+                            <td data-title="'Rolename'">{{ w.role_name }}</td>
+                            <td data-title="'Access'">
+                                <span>
+                                    <strong>Side Content Management</strong> <br/>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.side_content.view}">View</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.side_content.create}">Create</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.side_content.update}">Update</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.side_content.delete}">Delete</span><br>
+                                </span>
+                                <span>
+                                    <strong>Category Management</strong> <br/>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.category.view}">View</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.category.create}">Create</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.category.update}">Update</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.category.delete}">Delete</span><br>
+                                </span>
+                                <span>
+                                    <strong>Banner Management</strong> <br/>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.banner.view}">View</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.banner.create}">Create</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.banner.update}">Update</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.banner.delete}">Delete</span><br>
+                                </span>
+                                <span>
+                                    <strong>Static Content Management</strong> <br/>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.static_content.view}">View</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.static_content.update}">Update</span><br>
+                                </span>
+                                <span>
+                                    <strong>User Management</strong> <br/>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.user.view}">View</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.user.create}">Create Admin User</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.user.update}">Update Admin User</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.user.delete}">Delete Admin User</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.user.viewMainUser}">Main User View Only</span><br>
+                                </span>
+                                <span>
+                                    <strong>Comment Management</strong> <br/>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.comment.view}">View</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.comment.reply}">Reply</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.comment.delete}">Delete</span><br>
+                                </span>
+                                <span>
+                                    <strong>Comment Filter Management</strong> <br/>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.comment_filters.view}">View</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.comment_filters.create}">Create</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.comment_filters.update}">Update</span>
+                                    <span class="badge" ng-class="{'bgm-red':!w.role_access.comment_filters.delete}">Delete</span><br>
+                                </span>
+                            </td>
+                            <!-- <td data-title="'Category'">{{ w.role_name }}</td> -->
+                            
+            
+                            <td>
+                                <button type="button" class="btn btn-default" tooltip-placement="top" uib-tooltip="Delete" ng-click="deleteUserRole(w.id,w.id_crypt);"><i
+                                        class="zmdi zmdi-delete"></i></button>
+                                <button type="button" class="btn btn-default" tooltip-placement="top" uib-tooltip="Edit" ng-click="editRole(w.id,w.id_crypt,w.role_name,w.role_access);"><i
+                                        class="zmdi zmdi-edit zmdi-hc-fw"></i></button>
+                            </td>
+                        </tr>
+                    </table>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>  
+
+
+

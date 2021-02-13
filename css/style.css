@@ -1,0 +1,977 @@
+/*
+** Extended Generic Class
+*/
+.gridItemCategory img{
+  height: 100%;
+  width: 100%;
+}
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.cursor-no-drop {
+    cursor: no-drop !important;
+}
+
+.cursor-no-drop-alt {
+    cursor: no-drop !important;
+}
+
+.pointer-events-off {
+    pointer-events: none !important;
+}
+
+.bgm-transparent{
+  background-color: transparent !important;
+}
+
+.capitalize-per-word {
+  text-transform: capitalize !important;
+}
+
+.w-break {
+  word-break: break-all;
+}
+
+.w-wrap {
+  word-wrap: break-word;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-inline-flex {
+  display: inline-flex !important;
+}
+
+.d-none {
+  display: none;
+}
+
+.top-5 {
+    top: 5px !important;
+}
+
+.box-shadow-off {
+    box-shadow: 0 0px 0px transparent !important;
+}
+
+.l-height {
+
+}
+
+/*
+** Modified and alternative app css
+*/
+body.login-content:before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #2ba3d4 url("../img/bg_default.jpg") 40% 40% no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin:0px;
+    content: "";
+    z-index: 0;
+}
+
+.checkbox .input-helper:after {
+    border-bottom: 2px solid #2196f3;
+    border-left: 2px solid #2196f3;
+}
+
+.tab-nav-alt {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tab-nav-alt > li > a {
+  display: block;
+  color: #7a7a7a;
+  text-transform: uppercase;
+  position: relative;
+  /*font-weight: 500;*/
+}
+@media (min-width: 768px) {
+  .tab-nav-alt > li > a {
+    padding: 15px;
+  }
+
+  .tablet-social-width{
+    width: 41%;
+  }
+  .tablet-social-width span{
+    font-size: 12px
+  }
+}
+@media (max-width: 768px) {
+  .tab-nav-alt > li > a {
+    padding: 15px 8px;
+  }
+}
+.tab-nav-alt:not(.tn-vertical) {
+  white-space: nowrap;
+  overflow: visible;
+  box-shadow: inset 0 -2px 0 0 #eeeeee;
+}
+.tab-nav-alt:not(.tn-vertical) > li {
+  display: inline-block;
+  vertical-align: top;
+}
+.tab-nav-alt:not(.tn-vertical) > li > a {
+  -webkit-transition: all;
+  -o-transition: all;
+  transition: all;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
+}
+.tab-nav-alt:not(.tn-vertical) > li > a:after {
+  content: "";
+  height: 2px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: all;
+  -o-transition: all;
+  transition: all;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+.tab-nav-alt:not(.tn-vertical) > li.active > a {
+  color: #000;
+}
+.tab-nav-alt:not(.tn-vertical) > li.active > a:after {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.tab-nav-alt:not(.tn-vertical).tab-nav-right {
+  text-align: right;
+}
+.tab-nav-alt:not(.tn-vertical).tn-justified > li {
+  display: table-cell;
+  width: 1%;
+  text-align: center;
+}
+.tab-nav-alt:not(.tn-vertical).tn-icon > li .zmdi {
+  font-size: 22px;
+  line-height: 100%;
+  min-height: 25px;
+}
+.tab-nav-alt:not(.tn-vertical):not([data-tab-color]) > li > a:after {
+  background: #2196f3;
+}
+.tab-nav-alt:not(.tn-vertical)[data-tab-color="green"] > li > a:after {
+  background: #4caf50;
+}
+.tab-nav-alt:not(.tn-vertical)[data-tab-color="red"] > li > a:after {
+  background: #f44336;
+}
+.tab-nav-alt:not(.tn-vertical)[data-tab-color="teal"] > li > a:after {
+  background: #009688;
+}
+.tab-nav-alt:not(.tn-vertical)[data-tab-color="amber"] > li > a:after {
+  background: #ffc107;
+}
+.tab-nav-alt:not(.tn-vertical)[data-tab-color="black"] > li > a:after {
+  background: #000000;
+}
+.tab-nav-alt:not(.tn-vertical)[data-tab-color="cyan"] > li > a:after {
+  background: #00bcd4;
+}
+.fg-float .fg-toggled-alt .fg-label {
+  top: -20px;
+  font-size: 11px;
+}
+
+/*modal css overide*/
+
+.modal-dialog {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999!important;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    opacity: 1;
+    -webkit-transition: opacity 0.35s ease;
+    -moz-transition: opacity 0.35s ease;
+    -o-transition: opacity 0.35s ease;
+    -ms-transition: opacity 0.35s ease;
+    transition: opacity 0.35s ease;
+    background: #fff;
+    margin: 0;
+
+}
+
+.modal.fade .modal-dialog{
+    -webkit-transition-property: transform;
+    -webkit-transition-duration:0 ;
+    transition-property: transform;
+    transition-duration:0 ;
+}
+
+.modal.fade {
+   transition: none;
+}
+
+.modal-dialog .close {
+    cursor: pointer;
+    fill: #000;
+    position: absolute;
+    right: 1.5rem;
+    -webkit-transition: fill .2s;
+    transition: fill .2s;
+    display: block;
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.modal-dialog .close:hover{
+    color : #FF4500;
+}
+
+.modal .modal-content{
+    border-radius: 0;
+    box-shadow : none;
+}
+
+.modal-footer{
+    text-align: right;
+    width: 75%;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.modal .modal-body{
+    width: 75%;
+    margin: 0 auto;
+    padding: 0 0 10px;
+}
+
+.modal .modal-body h2{
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.modal.in .modal-dialog{
+    /* opacity: 0.91; */
+    background-color: rgba(255, 255, 255, 0);
+    overflow-y: auto;
+}
+
+/* OVERIDE */
+
+
+@media screen and (max-width: 992px) {
+    .modal .modal-body{
+        width: 600px;
+    }
+
+    .modal-footer{
+        width: 600px;
+    }
+}
+
+
+@media screen and (max-width: 767px){
+    .modal-dialog {
+        width: 100%;
+        margin: 0;
+    }
+
+    .modal .modal-body{
+        width: 90%;
+    }
+
+    .modal-footer{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .modal .modal-body {
+        width: 95%;
+    }
+
+    .modal .modal-body h2 {
+        font-size: 1.5em;
+        font-weight: 300;
+    }
+
+    .modal-dialog .close {
+        font-size: 25px;
+        font-weight: 300;
+        right: 5px;
+        cursor: pointer;
+    }
+
+    .modal .modal-header {
+        padding: 0;
+        padding-top: 10px;
+    }
+
+    .expiration-date-label{
+        display: none;
+    }
+}
+
+.fg-line.fg-toggle-off:after {
+    width: 0%;
+}
+.disablelink{
+  pointer-events:none;
+}
+.disablelink a{
+  color:#A9A9A9;
+}
+.disablelink select input{
+    color:#A9A9A9;
+}
+
+/*dotted loader*/
+@keyframes blink {
+    /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+    0% {
+      opacity: .2;
+    }
+    /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+    20% {
+      opacity: 1;
+    }
+    /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+    100% {
+      opacity: .2;
+    }
+}
+
+.saving span {
+    /**
+     * Use the blink animation, which is defined above
+     */
+    animation-name: blink;
+    /**
+     * The animation should take 1.4 seconds
+     */
+    animation-duration: 1.4s;
+    /**
+     * It will repeat itself forever
+     */
+    animation-iteration-count: infinite;
+    /**
+     * This makes sure that the starting style (opacity: .2)
+     * of the animation is applied before the animation starts.
+     * Otherwise we would see a short flash or would have
+     * to set the default styling of the dots to the same
+     * as the animation. Same applies for the ending styles.
+     */
+    animation-fill-mode: both;
+}
+
+.saving span:nth-child(2) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .2s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .2s;
+}
+
+.saving span:nth-child(3) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .4s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .4s;
+}
+
+#main-loader{
+  -webkit-transition: width 2s; /* Safari */
+  transition: width 2s;
+  position:  fixed;
+}
+
+#content.ng-enter {
+    /* transition on enter for .5s */
+    transition: .5s;
+
+    /* start with opacity 0 (invisible) */
+    /* opacity: 0; */
+}
+
+/* end 'enter' transition on main view */
+#content.ng-enter-active {
+    /* end with opacity 1 (fade in) */
+    opacity: 1;
+}
+
+.opacity-none {
+  opacity: 0;
+}
+
+.sweet-alert{
+  max-width: 450px !important;
+}
+
+*:not(.sweet-alert){
+  -webkit-transition: all .2s ease; /* Safari and Chrome */
+  -moz-transition: all .2s ease; /* Firefox */
+  -ms-transition: all .2s ease; /* IE 9 */
+  -o-transition: all .2s ease; /* Opera */
+  transition: all .2s ease;
+}
+
+.adminContent *{
+  -webkit-transition: all 0s ease !important; /* Safari and Chrome */
+  -moz-transition: all 0s ease !important; /* Firefox */
+  -ms-transition: all 0s ease !important; /* IE 9 */
+  -o-transition: all 0s ease !important; /* Opera */
+  transition: all 0s ease !important;
+}
+
+#grid-content{
+  -webkit-transition: all 1s ease; /* Safari and Chrome */
+  -moz-transition: all 1s ease; /* Firefox */
+  -ms-transition: all 1s ease; /* IE 9 */
+  -o-transition: all 1s ease; /* Opera */
+  transition: all 1s ease;
+}
+
+.comment-button:hover{
+  background-color: green !important;
+  color: white !important;
+}
+
+.no-padding{
+  padding: 0 !important;
+}
+
+.no-margin{
+  margin: 0 !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.containter-fluid  {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background: white;
+}
+
+.goFultura {
+  font-family: Futura,Trebuchet MS,Arial,sans-serif !important;
+  /* font-weight: bolder; */
+  font-weight: bold;
+}
+
+.goBebas {
+  font-family: 'BebasNeue' !important;
+}
+
+.goMyriad{
+  font-family:  "Myriad Pro""Myriad Pro",  "Gill Sans""Gill Sans",  "Gill Sans MT""Gill Sans MT",  CalibriCalibri, sans sans--serifserif !important;
+  font-style: italic;
+}
+
+.goFiraSans{
+  font-family: "Fira Sans", sans-serif !important;
+}
+
+#searchform::-webkit-input-placeholder,
+#searchform::-moz-placeholder,
+#searchform::-ms-input-placeholder,
+#searchform::-moz-placeholder{
+  font-family: "Fira Sans", sans-serif !important;
+}
+
+#banner-carousel ol.carousel-indicators{
+  left: 100px !important;
+  text-align: left !important;
+  width: auto !important;
+  /* bottom: 60px;
+  left: 98px !important;
+
+  margin-left: 0% !important;
+  padding-left: 1;
+  list-style: none;
+  text-align: start !important;*/
+}
+
+section#content.no-margin{
+  margin-top: 0% !important;
+}
+
+#footer .f-menu > li > a {
+  color:white !important;
+}
+#footer .f-menu > li > a:hover {
+  color:yellow !important;
+}
+.middle-align{
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+
+/* OVERIDE ALL */
+.carousel-control{
+  width: 4% !important;
+}
+html{
+  background-color: rgb(0, 0, 0);
+}
+
+#banner-carousel{
+  background-color: rgb(0, 0, 0);
+}
+
+.request-buffer{
+  text-align:center;
+  background:#000000;
+  background-attachment: scroll;
+  z-index: 1048;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  height: 100vh !important;
+  width: 100%;
+}
+
+.request-buffer img{
+  /* margin-top: 25vh;
+  height:50vh; */ /* Ehddver Cabiten */
+  margin-top: 35vh;
+  height: 35vh;
+}
+
+#banner-carousel .carousel-title {
+  font-size: 50px;
+  margin-bottom: 0 !important;
+  letter-spacing: 5px;
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-caption{
+  left: 50px !important;
+  background: none !important;
+}
+
+.carousel-caption .btn{
+  width: auto !important;
+}
+
+#boysen-flag img {
+  width: 100px !important;
+}
+
+.owl-stage-outer,
+.owl-stage,
+.owl-nav,
+.owl-dots{
+  display: none;
+}
+
+@media screen and (max-width: 1000px){
+  #banner-carousel ol.carousel-indicators {
+    left: 20px !important;
+  }
+
+}
+
+.likeUnlikeCount{
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.scrollable-content{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+/* width */
+.scrollable-content::-webkit-scrollbar {
+  width: 5px;
+  display: none !important;
+}
+
+/* Track */
+.scrollable-content::-webkit-scrollbar-track {
+  display: none !important;
+  background: #f1f1f1;
+}
+
+/* Handle */
+.scrollable-content::-webkit-scrollbar-thumb {
+  display: none !important;
+  background: #888;
+}
+
+/* Handle on hover */
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  display: none !important;
+  background: #555;
+}
+
+.gridItem{
+  transition: transform .2s;
+}
+
+.read-more-desc{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  /* height: 120px; */
+}
+
+.termsAndPrivacyModal h2,
+.termsAndPrivacyModal h3,
+.termsAndPrivacyModal h4{
+  color: #fff !important;
+}
+.termsAndPrivacyModal li{
+  text-align: left !important;
+}
+.display-none{
+  display: none;
+}
+.series-number-button{
+  font-weight: bolder;
+}
+
+
+.card-header:not(.ch-alt){
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.grid-episode-container{
+  display: grid;
+  grid-template-columns: 49% auto;
+  grid-gap: 10px;
+}
+
+.grid-button-container{
+  display: grid;
+  grid-template-columns: 10% auto;
+  padding-left: 20px;
+}
+.grid-button-container > img{
+  align-self: center;
+}
+
+.btn-series:hover,.btn-series:focus{
+  color:#ffe400 !important;
+  border-radius: 0px !important;
+}
+
+.video-title{
+  font-size: 3rem;
+}
+
+.fg-line:not([class*=has-]):after {
+  background: #ffe400 !important;
+}
+
+.custom-loader{
+  position: absolute;
+  background:transparent;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.custom-loader img{
+  width: 50vh;
+}
+
+.gridItemCategory:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+@-webkit-keyframes placeHolderShimmer {
+  0% {
+    background-position: -250px 0;
+  }
+  100% {
+    background-position: 250px 0;
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -250px 0;
+  }
+  100% {
+    background-position: 250px 0;
+  }
+}
+.tile__img2 {
+  width: 100%;
+  height: 20px;
+  -o-object-fit: cover;
+      object-fit: cover;
+
+  -webkit-animation-duration: 1.0s;
+  animation-duration: 1.0s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background: #181717;
+  background: linear-gradient(to right, rgba(44, 43, 43, 0.082) 18%, rgb(31, 30, 30) 38%, #181717 73%);
+  position: relative;
+}
+
+.tile__img3 {
+  width: 100%;
+  height: 140.625px;
+  border: 4px solid #ffe400;
+  -o-object-fit: cover;
+      object-fit: cover;
+
+  -webkit-animation-duration: 1.0s;
+  animation-duration: 1.0s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background: #181717;
+  background: linear-gradient(to right, rgba(44, 43, 43, 0.082) 18%, rgb(31, 30, 30) 38%, #181717 73%);
+  position: relative;
+}
+
+.tile__img {
+  width: 100%;
+  height: 140.625px;
+  -o-object-fit: cover;
+      object-fit: cover;
+
+  -webkit-animation-duration: 1.0s;
+  animation-duration: 1.0s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background: #181717;
+  background: linear-gradient(to right, rgba(44, 43, 43, 0.082) 18%, rgb(31, 30, 30) 38%, #181717 73%);
+  position: relative;
+}
+
+.bring-down{
+  z-index: -1;
+}
+
+.tile__img4 {
+  /* width: 100%; */
+  height: 100%;
+  width: 267px;
+  -o-object-fit: cover;
+      object-fit: cover;
+
+  /* -webkit-animation-duration: 1.0s;
+  animation-duration: 1.0s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: placeHolderShimmer;
+  animation-name: placeHolderShimmer;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear; */
+
+  background: rgba(179, 177, 177, 0.6);
+/* background: -moz-linear-gradient(left, rgba(89,89,89,0.6) 0%, rgba(44,44,44,0.6) 0%, rgba(28,28,28,0.6) 0%, rgba(43,43,43,0.6) 21%, rgba(43,43,43,0.6) 23%, rgba(76,76,76,0.6) 28%, rgba(102,102,102,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(89,89,89,0.6)), color-stop(0%, rgba(44,44,44,0.6)), color-stop(0%, rgba(28,28,28,0.6)), color-stop(21%, rgba(43,43,43,0.6)), color-stop(23%, rgba(43,43,43,0.6)), color-stop(28%, rgba(76,76,76,0.6)), color-stop(100%, rgba(102,102,102,1)));
+background: -webkit-linear-gradient(left, rgba(89,89,89,0.6) 0%, rgba(44,44,44,0.6) 0%, rgba(28,28,28,0.6) 0%, rgba(43,43,43,0.6) 21%, rgba(43,43,43,0.6) 23%, rgba(76,76,76,0.6) 28%, rgba(102,102,102,1) 100%);
+background: -o-linear-gradient(left, rgba(89,89,89,0.6) 0%, rgba(44,44,44,0.6) 0%, rgba(28,28,28,0.6) 0%, rgba(43,43,43,0.6) 21%, rgba(43,43,43,0.6) 23%, rgba(76,76,76,0.6) 28%, rgba(102,102,102,1) 100%);
+background: -ms-linear-gradient(left, rgba(89,89,89,0.6) 0%, rgba(44,44,44,0.6) 0%, rgba(28,28,28,0.6) 0%, rgba(43,43,43,0.6) 21%, rgba(43,43,43,0.6) 23%, rgba(76,76,76,0.6) 28%, rgba(102,102,102,1) 100%);
+background: linear-gradient(to right, rgba(89,89,89,0.6) 0%, rgba(44,44,44,0.6) 0%, rgba(28,28,28,0.6) 0%, rgba(43,43,43,0.6) 21%, rgba(43,43,43,0.6) 23%, rgba(76,76,76,0.6) 28%, rgba(102,102,102,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#595959', endColorstr='#666666', GradientType=1 ); */
+  position: relative;
+}
+
+@keyframes myChange {
+  from {
+      opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+div.ng-hide {
+  animation: 1s myChange;
+}
+
+#sideImageAnchor:hover{
+  color: yellow;
+}
+#sideImageAnchor{
+  color: white;
+  font-size: 2rem;
+}
+.gridItem, .imgFitToGridItem{
+  background: #171717;
+}
+.gridItemVideoSuggestions{
+  background: #000000 !important;
+}
+
+.videoPlayer:hover .videojs-logo{
+  opacity: 1;
+}
+
+.videojs-logo {
+  -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    transition: all 2s ease;
+  opacity: 0;
+  position: absolute;
+  /* right: 20px; */
+  width: 110px;
+  z-index: 1;
+  padding: 10px;
+  /* border: 2px solid; */
+}
+
+.zindex {
+  z-index: 999999999999999999 !important;
+}
+
+.btn-suggestion:focus, .btn-suggestion:hover{
+  background: transparent !important;
+}
+
+/* This used to work for the parent element of button divs */
+/* But it does not work with newer browsers, the below doesn't hide the play button parent div */
+
+*::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* Old shadow dom for play button */
+
+*::-webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* New shadow dom for play button */
+
+/* This one works! */
+
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+/*
+.carousel-inner > .item{
+  z-index: 1;
+} */
+
+.videoPlayer{
+  height: auto !important;
+}
+
+.showViaOpacity{
+  opacity: 1 !important;
+}
+
+/* Ehddver Cabiten */
+@media only screen and (min-width : 1280px) {
+  .footer-icon-70px{
+    padding-left: 15px;
+    padding-right: 16px;
+  }
+}
+
+/* Ehddver Cabiten */
+.video-js{
+  background-color: #030303 !important;
+}
+.vjs-loading-spinner img{
+  width: 55% !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.modal{
+  z-index: 9999 !important;
+}
+
+.vjs-fullscreen .vjs-loading-spinner img{
+  width: 30% !important;
+  margin-top: calc(100vh / 3) !important;
+}
+
+.geoBlockCategory {
+  width: 40%;
+}

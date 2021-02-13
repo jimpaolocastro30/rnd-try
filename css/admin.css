@@ -1,0 +1,35 @@
+
+
+.adminContent a{
+    color:green !important;
+  }
+  .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    background-color: yellow;
+  }
+  .header-selection{
+    font-size: 18px;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+  /* .header-selection:hover{
+    background: black;
+    color: yellow;
+  } */
+
+
+
+.cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width: 300;
+  height: 170px;
+}
+  /* ui-cropper {
+  background: #E4E4E4;
+  overflow: hidden;
+  width: 495px;
+  height: 300px;
+} */
+
+
+

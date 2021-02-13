@@ -1,0 +1,54 @@
+<ul class="header-inner clearfix">
+    <!-- <li id="menu-trigger" data-target="mainmenu" data-toggle-sidebar data-model-left="mactrl.sidebarToggle.left" data-ng-class="{ 'open': mactrl.sidebarToggle.left === true }"> -->
+        <!-- <div class="line-wrap">
+            <div class="line top"></div>
+            <div class="line center"></div>
+            <div class="line bottom"></div>
+        </div> -->
+    <!-- </li> -->
+
+    <li class="logo hidden-xs m-l-20">
+        <a style="line-height: 35px;" ui-sref="adminMain.dashboard"><h2 style="font-size: 18px;" class="c-white">Boysen Admin</h2></a>
+    </li>
+
+    <li class="pull-right m-t-10" ng-if="isAdminLoggedIn">
+        <ul class="top-menu">
+
+            <li class="header-selection">
+                <a ui-sref="adminMain.dashboard"><i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard</a>
+            </li>
+                
+            <li class="dropdown header-selection" uib-dropdown>
+                <a uib-dropdown-toggle href="" >
+                    <i class="zmdi zmdi-settings"></i> Content Management
+                </a>
+                <ul class="dropdown-menu pull-right header-selection">
+                    <li>
+                        <a style="font-size:16px;" ui-sref="adminMain.configuration" ng-if="side_contentView"> Side Contents Management</a>
+                        <a style="font-size:16px;" ui-sref="adminMain.category" ng-if="categoryView"> Category Management</a>
+                        <a style="font-size:16px;" ui-sref="adminMain.banner" ng-if="bannerView"> Banner Management</a>
+                        <a style="font-size:16px;" ui-sref="adminMain.static" ng-if="static_contentView"> Static Content Management</a>
+                        <a style="font-size:16px;" ui-sref="adminMain.userRole" ng-if="userRoleView"> User Role Maintenance</a>
+                        <a style="font-size:16px;" ui-sref="adminMain.user" ng-if="userView"> Users Management</a>
+                        <a style="font-size:16px;" ui-sref="adminMain.comment" ng-if="commentView"> Comment Management</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="header-selection">
+                <a href="" ng-click="goAdminLogout();"><i class="zmdi zmdi-power"></i> Logout</a>
+            </li>
+            <!-- <li class="hidden-xs" data-target="chat" data-toggle-sidebar data-model-right="mactrl.sidebarToggle.right" data-ng-class="{ 'open': mactrl.sidebarToggle.right === true }">
+                <a href=""><i class="tm-icon zmdi zmdi-comment-alt-text"></i></a>
+            </li> -->
+        </ul>
+    </li>
+</ul>
+
+<!-- Top Search Content -->
+<!-- <div id="top-search-wrap">
+    <div class="tsw-inner">
+        <i id="top-search-close" class="zmdi zmdi-arrow-left" data-ng-click="hctrl.closeSearch()"></i>
+        <input type="text">
+    </div>
+</div> -->

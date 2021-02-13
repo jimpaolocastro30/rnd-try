@@ -1,0 +1,166 @@
+<div class="containter-fluid p-t-30" ng-init="getCommentsData();">
+    <div class="card p-t-20">
+        <div class="card-header">
+            <h1 style="font-size:18px;" >Comments Notification</h1>
+            <hr />
+        </div>
+
+        <div class="row" ng-controller="dashboardCtrl" ng-init="getCommentList();">
+
+            <div class="col-md-12">
+                <!-- <div class="col-md-12 p-30">
+                    <h1 style="font-size:18px;" class="p-t-18">Comment Notification</h1>
+                    <hr />
+                </div> -->
+                
+
+                <div class="col-md-12 p-30">
+                    <div class="col-md-1">
+                        <h4>Filter:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="fg-line">
+                                <div id="typeContainer" class="select">
+                                    <select id="type" class="form-control" ng-model="filterParams.filter_type">
+                                        <option value="name">Name</option>
+                                        <option value="date">Date</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 no-padding">
+                        <div class="fg-line" ng-if="filterParams.filter_type == 'name'">
+                            <input type="input" placeholder="Name" ng-model="filterParams.comment_name_filter" class="form-control">
+                        </div>
+                        <div class="form-group fg-line" ng-if="filterParams.filter_type == 'date'">
+                            <input type="text" ng-model="filterParams.comment_date_filter" class="form-control ng-isolate-scope"
+                                data-input-mask="{mask: '0000-00-00'}" placeholder="YYYY-MM-DD" maxlength="10" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn" ng-click="getCommentList()">Filter</button>
+                    </div>
+                </div>
+
+                <!-- <hr /> -->
+                <div class="col-md-12 p-30">
+                    <!-- card-body -->
+                    <div class="table-responsive">
+                        <!-- table-responsive -->
+                        <table ng-table="tableBasic2" class="table table-striped table-vmiddle">
+                            <!-- tableBasic2 -->
+                            <tbody ng-repeat="w in commentList">
+                                <!-- commentList -->
+                                <tr>
+                                    <td data-title="'Username'">
+                                        {{ w.user }}
+                                    </td>
+                                    <td data-title="'Comment Content'">
+                                        {{ w.userComment }}
+                                    </td>
+                                    <td data-title="'Comment Date'">
+                                        {{ w.posted_at }}
+                                    </td>
+                                    <td ng-if="adminRoleAccess_reply">
+                                        <button type="button" class="btn btn-default" ng-click="w.replyViaComment = !w.replyViaComment;"
+                                            tooltip-placement="top" uib-tooltip="Reply">Reply</button>
+                                    </td>
+                                    <td ng-if="adminRoleAccess_delete">
+                                        <button type="button" class="btn btn-default" ng-click="deleteComment(w.id,w.id_crypt,'dashboard')"
+                                            tooltip-placement="top" uib-tooltip="Delete"><i class="zmdi zmdi-delete"></i></button>
+                                    </td>
+                                </tr>
+                                <tr ng-if="w.replyViaComment">
+                                    <td colspan="5">
+                                        <div class="col-md-10">
+                                            <div class="fg-line">
+                                                <input type="input" placeholder="Reply" ng-model="w.reply" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button class="btn" ng-click="replyComment(w, 'dashboard')">Reply</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+     
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-12 p-30">
+                    <h1 style="font-size:18px;" class="p-t-18">Comment Filters</h1>
+                    <hr />
+                </div>
+            
+                <div class="col-md-4 p-30">
+                    <div class="card-padding m-t-20">
+                        <div class="form-group fg-float">
+                            <div id="urlContainer" ng-class="{'fg-toggled' : word }" class="fg-line">
+                                <input class="form-control fg-input" type="text" ng-model="word" ng-disabled="!adminRoleAccess_Create">
+                                <label class="fg-label">Word</label>
+                            </div>
+                        </div>
+            
+                        <div class="btn-group btn-group-lg pull-right" role="group">
+                            <button type="button" class="btn btn-primary waves-effect" ng-click="insertNewWord();" ng-if="!isEditMode"
+                                ng-disabled="!adminRoleAccess_Create">Create</button>
+                        </div>
+            
+                        <div class="btn-group btn-group-lg pull-right" role="group">
+                            <button type="button" class="btn btn-primary m-r-10 waves-effect" ng-click="editWord();" ng-if="isEditMode"
+                                ng-disabled="!adminRoleAccess_Update">Save</button>
+            
+                            <button type="button" class="btn btn-primary waves-effect" ng-click="cancelWord();" ng-if="isEditMode"
+                                ng-disabled="!adminRoleAccess_Update">Cancel</button>
+                        </div>
+            
+                        <!-- <div class="btn-group btn-group-lg pull-right" role="group">
+                                                                    <button type="button" class="btn btn-primary waves-effect" ng-click="cancelWord();" ng-if="isEditMode" ng-disabled="!adminRoleAccess_Update">Cancel</button>
+                                                                </div> -->
+                    </div>
+                </div>
+            
+            
+                <div class="col-md-6 p-30" style="border-left: 1px solid black;">
+                    <div class="table-responsive">
+                        <div>
+                            <table ng-table="tableBasic" class="table table-striped table-vmiddle" style="width:%;">
+                                <tr ng-repeat="w in wordData track by $index">
+                                    <td data-title="'Word'" style="width:40%;">
+                                        <div class="form-group fg-float fg-toggled m-b-10 m-t-15 p-r-30">
+                                            <div id="urlContainer" class="fg-line fg-toggled fg-toggle-off">
+                                                <input class="form-control fg-input" ng-disabled="!w.is_edit" type="text" ng-model="w.word"
+                                                    ng-value="w.word">
+                                                <label class="fg-label"></label>
+                                            </div>
+                                        </div>
+                               
+                                    </td>
+            
+                                    <!-- <td data-title="''" style="width: 10%">
+                                        <button type="button" class="btn btn-default" tooltip-placement="top" uib-tooltip="Delete"
+                                            ng-click="deleteWord(w.id,w.id_crypt);" ng-disabled="!adminRoleAccess_delete"><i class="zmdi zmdi-delete"></i></button>
+                                    </td> -->
+                                    <td data-title="''">
+                                        <button type="button" class="btn btn-default" tooltip-placement="top" uib-tooltip="Delete" ng-click="deleteWord(w.id,w.id_crypt);"
+                                            ng-disabled="!adminRoleAccess_delete"><i class="zmdi zmdi-delete"></i></button>
+
+                                        <button type="button" class="btn btn-default" tooltip-placement="top" uib-tooltip="Edit"
+                                            ng-click="editMode(w.id,w.id_crypt,w.word);"><i class="zmdi zmdi-edit zmdi-hc-fw"></i></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+            </div>
+
+        </div>
+    </div>
+</div>

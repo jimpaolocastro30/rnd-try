@@ -1,0 +1,1469 @@
+
+/* GLOBAL SMALL PORTRAIT */
+@media only screen and (max-width : 767px) and (orientation:portrait){
+  .adsTextContainer span{
+    font-size: 12px !important;
+  }
+  .adsTextContainer{
+    padding: 5px 15px !important;
+  }
+  .header-popup-content div{
+    left: 50px !important;
+  }
+  .carousel-caption{
+    left: 0px !important;
+  }
+}
+@media only screen and (max-width : 767px){
+  .gridContent{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    /* grid-template-rows: 100%; */
+  }
+  .mobile-no-padding{
+    padding: 0 !important
+  }
+  #category-selection{
+    margin-left: 0px !important;
+  }
+  .header-popup {
+    margin-top: 0px !important;
+    height: calc(39.4545px) !important;
+    z-index: 1050 !important;
+  }
+  .sweet-alert {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    left: 0 !important;
+    /* right: 15px; */
+  }
+  .carousel-caption button{
+    padding: 5px !important;
+  }
+  .gridItem:hover {
+    transform: none !important;
+  }
+  #banner-carousel ol.carousel-indicators{
+    bottom: 0 !important;
+  }
+  .modal-body{
+    width: 350px !important;
+  }
+  .carousel .carousel-caption {
+    /* display: none; */
+    /* width: auto !important; */
+    width: 55% !important;
+    padding: 0 20px !important;
+    margin: -20px 0;
+  }
+  .carousel .carousel-caption h1 {
+    font-size: 20px !important;
+  }
+  .carousel .carousel-caption p {
+    margin-top: 0 !important;
+    font-size: 10px !important;
+  }
+  input#searchform::placeholder{
+    font-size: 12px !important;
+  }
+
+  .modal-content .modal-header h1{
+    margin-bottom: 0 !important;
+    padding: 7px 0 !important;
+  }
+
+  .request-buffer img{
+    margin-top: 30vh;
+    height:35vh;
+  }
+  .isMobile{
+    display: block;
+  }
+  #header .others{
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+  }
+
+  #main-loader div img{
+    width: 100vw !important;
+  }
+  .termsAndPrivacyModal{
+    height: 300px;
+    margin: 20px;
+  }
+  #videoPlayer{
+    height: calc(100vh / 3) !important;
+  }
+
+  .episode-text-container{
+    font-size: 4rem;
+    vertical-align: middle;
+    display:  flex;
+    margin-top: 10px;
+  }
+  .episode-text-container span{
+    font-size: 1.2rem !important;
+  }
+  .episode-container{
+    border-bottom: 2px solid black;
+    width: 46%;
+    float: left;
+    margin-right: 8px
+  }
+  .season-button-placing{
+    margin-top: -12%;
+  }
+  .series-number-button{
+    box-shadow: 0 0 0 transparent !important;
+    font-size: 1.2rem;
+  }
+
+  #header,
+  #header .ng-scope,
+  #header .ng-scope .header-inner,
+  #header .ng-scope .header-inner li.logo{
+    height: 100%;
+  }
+
+  #header {
+    padding-left: 0;
+    padding-right: 0;
+    height: 12vh;
+  }
+  #header .header-inner{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #header .header-inner li.logo{
+    width: 28%;
+  }
+  #header .header-inner li.others{
+    width: 77%;
+  }
+
+  /* STUDIO B */
+  #header .ng-scope .header-inner li.logo{
+    height: 100%;
+    line-height: 40px;
+  }
+  #header ul.header-inner li.logo img{
+    width: 100%;
+  }
+
+  ul.top-menu li{
+    margin-top: 5px;
+  }
+
+  /* SEARCH */
+  #header ul.header-inner li.others ul.top-menu li.searchform span{
+    font-size: 17px !important;
+    padding: 0 5px 0 0;
+    min-width: 15px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.searchform input{
+    height: 30px;
+    width: 100%;
+  }
+
+  #top-search{
+    margin-left: 17%;
+  }
+  #sign-up,
+  #log-in{
+    display: none;
+  }
+  #login-drop{
+    display: inline-block !important;
+  }
+  #header div ul li.others ul.top-menu li{
+    position: relative !important;
+  }
+
+  /* USER NAME */
+  #logged-in{
+    min-width: 20px;
+  }
+  .loggedInbtn{
+    max-width: 10%;
+    width: 100%;
+  }
+  .loggedInbtn span a{
+    display: none;
+  }
+  .loggedInbtn span{
+    line-height: 50px;
+    padding: 0 0 0 20%;
+  }
+  .loggedInbtn span img{
+    width: calc(70vh / 14);
+    float: none !important;
+  }
+  .loggedInbtn span a{
+    float: right;
+    padding: 18px 5px;
+    max-width: 60%;
+    width: 55%;
+    font-size: small;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+  }
+
+  /* BOYSEN */
+  #header ul.header-inner li.others ul.top-menu li.web-logo{
+    margin-top: -5px;
+    width: 30%;
+    margin-right: 5px;
+  }
+
+
+  /* CAROUSEL */
+  section#content{
+    /* margin-top: 10vh !important; */
+  }
+  #banner-carousel .carousel-inner,
+  #banner-carousel .carousel-inner div img.carousel-image{
+    /*height: 300px !important;*/
+  }
+  div.carousel .carousel-inner img{
+    object-fit: cover;
+  }
+  .carousel .carousel-caption p{
+    display: block;
+    width: 70%;
+  }
+  .carousel-indicators{
+    width: 60% !important;
+  }
+  #banner-carousel .carousel-inner div img.carousel-image{
+    /* height: calc(100vh / 1.3) !important; #remove */
+  }
+  a.carousel-control.right span{
+    display: none;
+  }
+  a.carousel-control.left span{
+    display: none;
+  }
+
+  /* YELLOW TAG */
+  .watch-for-free-label{
+    font-size: 3.6rem !important;
+    margin-bottom: 6vh;
+    padding-top: 4vh;
+  }
+  .watch-for-free-category-label{
+    font-size: 1.5rem !important;
+    font-weight: bold;
+    margin-bottom: 1vh !important;
+  }
+  #category-selection{
+    /* width: 90%; */
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    margin-bottom: 2vh;
+    margin-left: -30px;
+  }
+  #category-selection button{
+    font-size: 1rem !important;
+    font-weight: bolder !important;
+    margin: 10px 5px;
+    padding: 10px 5px;
+    border: 1px solid;
+  }
+
+  /* CATEGORIES */
+  #grid-content .gridContent .gridItem{
+    width: calc(100vw / 3.14) !important;
+    height: calc(100vh / 3);
+    margin: 0 2px 2px 2px;
+    display: inline-block;
+  }
+  #grid-content .gridContent .gridItem img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* THMUBNAILS */
+  .thumbnails h3:nth-child(1),
+  #grid-content h3:nth-child(1){
+    margin-top: 0px;
+    font-size: 1.8rem;
+  }
+  .boysen-now-controls-container span button,
+  .box-office-controls-container span button{
+      padding: 3px 6px;
+  }
+
+  .footer-icons{
+    display:flex !important;
+    width:90% !important;
+    margin:0 auto !important;
+  }
+  #footerContent div.footer-icons .footer-icon-faqcebook,
+  #footerContent div.footer-icons .footer-icon-instagram,
+  #footerContent div.footer-icons .footer-icon-pinterest, {
+    margin: 0 10px !important;
+  }
+  .footer-icons div{
+    /* padding: 0 !important;
+    width: calc(100%/6);
+    margin: 0 !important; */
+  }
+  .footer-icons div a img{
+    padding: 0 !important;
+  }
+  /* ICONS */
+  /* #footerContent div.footer-icons{
+    display: block !important;
+    width: 90% !important;
+  } */
+  /* LET IT B */
+  #footerContent div.footer-icons div.let-it-be{
+    /* padding: 0 37px !important;
+    float: left;
+    width: 50% !important;
+    margin-top: 8vh; */
+
+    /* padding: 0 0px !important;
+    float: left;
+    width: 30% !important;
+    margin-top: 9vh; */
+  }
+  /* BOYSEN */
+  #footerContent div.footer-icons div.boysen-logo{
+    /* float: right;
+    width: 50%;
+    margin-top: 8vh; */
+
+    /* float: right;
+    width: 32%;
+    margin-top: 10vh; */
+  }
+  /* BOYSEN VR */
+  #footerContent div.footer-icons div.boysen-vr{
+    /* width: 34% !important;
+    padding: 0;
+    margin-top: 8vh; */
+  }
+
+  /* SOCIAL MEDIA */
+  #footerContent div.footer-icons div.footer-social-media{
+    /* float: none;
+    width: 60%;
+    position: absolute !important;
+    margin: auto 16%; */
+  }
+  #footerContent div.footer-icons div.footer-social-media div{
+    /* float: left;
+    width: 32%; */
+  }
+
+  /* LINKS */
+  #footerContent div.footer-links{
+    display: inline-block !important;
+    width: 100% !important;
+    margin: 2vh auto !important;
+    font-size: 11px;
+  }
+  .footer-copyrights{
+    font-size: 10px;
+    padding: 7px 0 !important;
+  }
+
+  /* MODAL */
+  .signupModal{
+    margin-top: 60vw !important;
+  }
+  .signupModal,
+  .loginModal{
+    width: 80vw !important;
+  }
+  .signupModal img,
+  .loginModal img{
+    margin-top: 1vh !important;
+  }
+  .helpModal {
+    width: 90vw !important;
+  }
+
+  .comment-users-icon{
+    width: 20%;
+    float: left;
+  }
+  .comment-users-content{
+    float: left;
+    width: 75%;
+  }
+  .video-content-image{
+    width: 35%;
+    float: left;
+  }
+  .video-content-desc{
+    float: left;
+    width: 65%;
+  }
+  .watchNow-containter{
+    padding: 8% 3%;
+  }
+  .comment-textarea{
+    border-radius: 15px;
+    height:50px;
+    color: black;
+    width: 100%;
+  }
+
+  .youtube-iframe{
+    width: 100%;
+    height: calc(300px / 1.5);
+  }
+
+  #boysen-flag img{
+    width: 60px !important;
+  }
+
+
+  /* NEW FOOTER 9-19-18 */
+  .footer-icons{
+    height: auto;
+  }
+
+  .boysen_icons{
+    width: 100% !important;
+    height: 95px !important;
+    max-height: 95px !important;
+  }
+
+  .boysen_social{
+    position: absolute !important;
+    width: 90% !important;
+    margin-top: 100px !important;
+    padding: 0 15% !important;
+  }
+}
+
+/* SMALLEST PORTRAIT */
+@media only screen and (max-width : 320px){
+  .headerPopupCss{
+    margin-top: -2px;
+  }
+  #footer .f-menu{
+    font-size: 8px;
+  }
+  .header-popup {
+    margin-top: -5px !important;
+  }
+  #category-selection button{
+    font-size: 1rem !important;
+  }
+  #category-selection{
+    margin-left: 0px !important;
+  }
+  .watch-for-free-label{
+    font-size: 2.6rem !important;
+    margin-bottom: 7vh;
+    padding-top: 4vh;
+  }
+  .video-title{
+    font-size: 1.5rem !important;
+  }
+  .carousel .carousel-caption{
+    width: 70% !important;
+  }
+  .carousel .carousel-caption p{
+    width: 100% !important;
+  }
+  #banner-carousel .carousel-inner div img.carousel-image {
+      height: 150px !important;
+      width: 100%;
+      object-fit: fill;
+  }
+
+  .carousel-inner{
+    background-color: rgb(0, 0, 0);
+    height: 150px !important;
+    margin-top: 70px;
+  }
+  .videojs-logo {
+    width: 70px;
+  }
+  .main-container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .vjs-loading-spinner{
+    left:-7%;
+    top: 20% !important;
+  }
+  .videoPlayer{
+    height: 200px;
+  }
+  .watchNow-containter h3.breadcrumbs,
+  .videoSuggestion h3,
+  #comment-section h3{
+    font-size: 16px;
+    width: 78%;
+    text-indent: 0 !important;
+  }
+  .reset-password-form{
+    height: 69vh;
+    padding: 20% 5% 0 5%;
+  }
+  .gridItem2{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem2 img{
+    /* height:32vh;  #remove*/
+    height: 120px;
+  }
+  .divCategory{
+    min-height: 200px;
+    padding: 15px 2%;
+  }
+  .gridContent{
+    min-height: 200px;
+    margin-left: 4px;
+  }
+  .gridItem{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem img{
+    /* height:32vh;  #remove*/
+    height: 185px;
+  }
+  .gridItemCategory{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+    display: inline-flex;
+    min-height: 130px;
+  }
+  .gridItemCategory img{
+    /* height:32vh;  #remove*/
+    height: 130px;
+  }
+  /* LOADER WHILE CONTENT LOADS */
+  .request-buffer,
+  .request-buffer img{
+    /* height: calc(100vh / 1.95) !important; */
+  }
+  .request-buffer img{
+    /* width: 100% !important; */
+  }
+
+  .gridItem{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem img{
+    /* height:32vh;  #remove*/
+    height: 115px;
+  }
+  .scrollable-content{
+    min-height: 115px;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.searchform{
+    width: 30%;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.signupbtn,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn{
+    min-width: 25px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.signupbtn a,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn a{
+    padding: 21px 0 0 0;
+    font-size: 8px;
+    width: 30px;
+  }
+
+  #top-search{
+    margin-left: 8%;
+  }
+
+  /* BOYSEN */
+  #header ul.header-inner li.others ul.top-menu li.web-logo{
+    margin-right: 25px;
+  }
+
+  /* CATEGORIES */
+  #grid-content .gridContent .gridItem{
+    height: calc(100vh / 4);
+  }
+
+  .episode-container{
+    border-bottom: 2px solid black;
+    width: 100%;
+    float: left;
+    margin-right: 8px;
+  }
+  .season-button-placing{
+    margin-top: -12%;
+  }
+  .series-number-button{
+    box-shadow: 0 0 0 transparent !important;
+    font-size: 1.2rem;
+  }
+
+  .youtube-iframe{
+    width: 100%;
+    height: calc(300px / 1.5);
+  }
+}
+
+/* SECOND SMALLEST PORTRAIT */
+@media only screen and (min-width : 321px) and (max-width : 375px){
+  #footer .f-menu{
+    font-size: 10px;
+  }
+  .video-title{
+    font-size: 1.5rem !important;
+  }
+  .carousel .carousel-caption p {
+    display: block;
+    width: 100%;
+  }
+  #banner-carousel .carousel-inner div img.carousel-image {
+      height: 160px !important;
+      width: 100%;
+      object-fit: fill;
+  }
+
+  .carousel-inner{
+    background-color: rgb(0, 0, 0);
+    height: 160px !important;
+    margin-top: 70px;
+  }
+  .videojs-logo {
+    width: 70px;
+  }
+  .main-container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .vjs-loading-spinner{
+    left:5%;
+    top: 25% !important;
+  }
+  .videoPlayer{
+    height: 230px;
+  }
+  .watchNow-containter h3.breadcrumbs{
+    font-size: 17px;
+    width: 80%;
+    text-indent: 0 !important;
+  }
+  .reset-password-form{
+    height: 69vh;
+    padding: 20% 5% 0 5%;
+  }
+  .gridItem2{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem2 img{
+    /* height:32vh;  #remove*/
+    height: 120px;
+  }
+  .divCategory{
+    min-height: 200px;
+    padding: 15px 2%;
+  }
+  .gridContent{
+    min-height: 200px;
+    margin-left: 4px;
+  }
+  .gridItem{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem img{
+    /* height:32vh;  #remove*/
+    height: 185px;
+  }
+  .gridItemCategory{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+    display: inline-flex;
+    min-height: 155px;
+  }
+  .gridItemCategory img{
+    /* height:32vh;  #remove*/
+    height: 150px;
+  }
+  /* LOADER WHILE CONTENT LOADS */
+  .request-buffer,
+  .request-buffer img{
+    /* height: calc(100vh / 2.1) !important; */
+  }
+  .request-buffer img{
+    /* width: 90% !important; */
+  }
+
+  .gridItem{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem img{
+    /* height:32vh;  #remove*/
+    height: 140px;
+  }
+
+  .scrollable-content{
+    min-height: 140px;
+  }
+
+  #header .header-inner li.logo{
+    width: 25%;
+  }
+  #header .header-inner li.others{
+    width: 70%;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.searchform{
+    width: 30%;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.signupbtn,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn{
+    min-width: 38px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.signupbtn a,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn a{
+    padding: 21px 0 0 0;
+    font-size: 10px;
+    width: 35px;
+  }
+
+  #top-search{
+    margin-left: 12%;
+  }
+
+  /* BOYSEN */
+  #header ul.header-inner li.others ul.top-menu li.web-logo{
+    margin-right: 25px;
+  }
+
+  #category-selection {
+    margin-left: -20px;
+  }
+  #category-selection button{
+    font-size: 1rem !important;
+  }
+
+  /* LET IT B */
+  #footerContent div.footer-icons div.let-it-be{
+    /* padding: 0 37px !important;
+    float: left;
+    width: 50% !important;
+    margin-top: 10vh; */
+
+    /* padding: 0 0px !important;
+    float: left;
+    width: 31% !important;
+    margin-top: 12vh; */
+  }
+  /* BOYSEN */
+  #footerContent div.footer-icons div.boysen-logo{
+    /* float: right;
+    width: 50%;
+    margin-top: 10vh; */
+
+    /* float: right;
+    width: 32%;
+    margin-top: 13vh; */
+  }
+  /* BOYSEN VR */
+  #footerContent div.footer-icons div.boysen-vr{
+    /* float: left;
+    margin-left: 6px;
+    width: 35% !important;
+    margin-top: 10vh; */
+  }
+
+  .youtube-iframe{
+    width: 100%;
+    height: calc(300px / 1.5);
+  }
+
+  .episode-container {
+    border-bottom: 2px solid black;
+    width: 100%;
+    float: left;
+    margin-right: 8px;
+  }
+}
+
+/* THIRD SMALLEST PORTRAIT */
+@media only screen and (min-width : 376px) and (max-width : 480px){
+  #banner-carousel .carousel-inner div img.carousel-image {
+      height: 190px !important;
+      width: 100%;
+      object-fit: fill;
+  }
+
+  .carousel-inner{
+    background-color: rgb(0, 0, 0);
+    height: 190px !important;
+    margin-top: 70px;
+  }
+  .videojs-logo {
+    width: 80px;
+  }
+  .main-container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .vjs-loading-spinner{
+    left:10%;
+    top: 25% !important;
+  }
+  .videoPlayer{
+    height: 260px;
+  }
+  .watchNow-containter h3.breadcrumbs,
+  .videoSuggestion h3,
+  #comment-section h3{
+    font-size: 17px;
+    width: 82%;
+    text-indent: 0 !important;
+  }
+  .reset-password-form{
+    height: 69vh;
+    padding: 20% 5% 0 5%;
+  }
+  .divCategory{
+    min-height: 200px;
+    padding: 15px 2%;
+  }
+  
+  .gridItem2{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem2 img{
+    /* height:32vh;  #remove*/
+    height: 135px;
+  }
+  .gridContent{
+    min-height: 200px;
+    margin-left: 5px;
+  }
+  .gridItem{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem img{
+    /* height:32vh;  #remove*/
+    height: 185px;
+  }
+  .gridItemCategory{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+    display: inline-flex;
+    min-height: 130px;
+  }
+  .gridItemCategory img{
+    /* height:32vh;  #remove*/
+    height: 170px;
+  }
+  /* LOADER WHILE CONTENT LOADS */
+  .request-buffer,
+  .request-buffer img{
+    /* height: calc(100vh / 2) !important; */
+  }
+  .request-buffer img{
+    /* width: 80% !important; */
+  }
+
+  .gridItem{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem img{
+    /* height:32vh;  #remove*/
+    height: 145px;
+  }
+  .scrollable-content{
+    min-height: 145px;
+  }
+
+  #header .header-inner li.logo{
+    width: 25%;
+  }
+  #header .header-inner li.others{
+    width: 73%;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.searchform{
+    width: 30%;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.signupbtn,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn{
+    min-width: 45px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.signupbtn a,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn a{
+    padding: 16px 0 0 0;
+    font-size: 13px;
+    width: 45px;
+  }
+
+  #category-selection {
+    margin-left: -20px;
+  }
+  #category-selection button{
+    font-size: 1.1rem !important;
+  }
+
+  /* LET IT B */
+  #footerContent div.footer-icons div.let-it-be{
+    /* padding: 0 5px !important;
+    float: left;
+    width: 35% !important;
+    margin-top: 13vh; */
+  }
+  /* BOYSEN */
+  #footerContent div.footer-icons div.boysen-logo{
+    /* float: right;
+    width: 30%;
+    margin-top: 12vh;
+    padding: 0; */
+  }
+  /* BOYSEN VR */
+  #footerContent div.footer-icons div.boysen-vr{
+    /* float: left;
+    margin-top: 10vh;
+    margin-left: 2px; */
+  }
+  /* SOCIAL MEDIA */
+  #footerContent div.footer-icons div.footer-social-media{
+    float: none;
+    width: 60%;
+    position: absolute !important;
+    margin: auto 20%;
+  }
+  #footerContent div.footer-icons div.footer-social-media div{
+    float: left;
+    width: 28%;
+  }
+
+  /* LINKS */
+  #footerContent div.footer-links{
+    display: inline-block !important;
+    width: 100% !important;
+    margin: 2vh auto !important;
+    font-size: 13px;
+  }
+  .footer-copyrights{
+    font-size: 12px;
+    padding: 7px 0 !important;
+  }
+
+  .youtube-iframe{
+    width: 100%;
+    height: calc(300px / 1.5);
+  }
+}
+
+/* MID TABLET PORTRAIT */
+@media only screen and (min-width : 481px) and (max-width : 767px){
+  #header .header-inner li.logo{
+    width: 23%;
+  }
+  .gridItem{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItemVideoSuggestions{
+    /* height:32vh;  #remove*/
+    height: 185px;
+  }
+  .videoPlayer{
+    height: 240px;
+  }
+  #header .header-inner li.others{
+    width: 70%;
+  }
+
+  /* SEARCH */
+  #header ul.header-inner li.others ul.top-menu li.searchform{
+    width: 40%;
+  }
+  #header ul.header-inner li.others ul.top-menu li.searchform span{
+    font-size: 15px !important;
+    padding: 19px 5px 0 0;
+    min-width: 15px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.searchform input{
+    height: 35px;
+    width: 100%;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.signupbtn,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn{
+    min-width: 55px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.signupbtn a,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn a{
+    padding: 16px 0 0 0;
+    font-size: 15px;
+    width: 55px;
+  }
+
+  /* YELLOW TAG */
+  .watch-for-free-label{
+    font-size: 5rem !important;
+    margin-bottom: 7vh;
+    padding-top: 2vh;
+  }
+  .watch-for-free-category-label{
+    font-size: 2rem !important;
+    font-weight: bold;
+    margin-bottom: 1vh !important;
+  }
+  #category-selection {
+    margin-left: -20px;
+    margin-bottom: 4vh;
+  }
+  #category-selection button{
+    font-size: 1.4rem !important;
+  }
+
+  /* LET IT B */
+  #footerContent div.footer-icons div.let-it-be{
+    padding: 0 37px !important;
+    float: left;
+    width: 50% !important;
+    margin-top: 8vh;
+  }
+  /* BOYSEN */
+  #footerContent div.footer-icons div.boysen-logo{
+    float: right;
+    width: 50%;
+    margin-top: 9vh;
+  }
+  /* SOCIAL MEDIA */
+  #footerContent div.footer-icons div.footer-social-media{
+    float: none;
+    width: 50%;
+    position: absolute !important;
+    margin: auto 24%;
+  }
+  #footerContent div.footer-icons div.footer-social-media div{
+    float: left;
+    width: 28%;
+  }
+
+  /* LINKS */
+  #footerContent div.footer-links{
+    display: inline-block !important;
+    width: 100% !important;
+    margin: 2vh auto !important;
+    font-size: 13px;
+  }
+  .footer-copyrights{
+    font-size: 12px;
+    padding: 7px 0 !important;
+  }
+  .youtube-iframe{
+    width: 100%;
+    height: calc(300px / 1.5);
+  }
+}
+
+@media only screen and (min-width : 481px) and (max-width : 520px){
+  /* LOADER WHILE CONTENT LOADS */
+  .request-buffer,
+  .request-buffer img{
+    /* height: calc(100vh / 2) !important; */
+  }
+  .request-buffer img{
+    /* width: 70% !important; */
+  }
+
+  #header .header-inner li.others{
+    width: 75%;
+  }
+  .videoPlayer{
+    height: 240px;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.signupbtn,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn{
+    min-width: 45px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.signupbtn a,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn a{
+    padding: 20px 0 0 0;
+    font-size: 13px;
+    width: 45px;
+  }
+
+  /* USER NAME */
+  .loggedInbtn span{
+    padding: 0 0 0 10%;
+  }
+  .loggedInbtn span a{
+    max-width: 70%;
+    width: 70%;
+  }
+
+  /* BOYSEN */
+  #header ul.header-inner li.others ul.top-menu li.web-logo{
+    margin-top: -5px;
+    width: 23%;
+  }
+
+  .youtube-iframe{
+    width: 100%;
+    height: calc(300px / 1.5);
+  }
+}
+
+@media only screen and (min-width : 521px) and (max-width : 580px){
+  /* LOADER WHILE CONTENT LOADS */
+  .request-buffer,
+  .request-buffer img{
+    /* height: calc(100vh / 2.3) !important; */
+  }
+  .request-buffer img{
+    /* width: 50% !important; */
+  }
+
+  #header .header-inner li.others{
+    width: 67%;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.signupbtn,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn{
+    min-width: 45px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.signupbtn a,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn a{
+    padding: 20px 0 0 0;
+    font-size: 13px;
+    width: 45px;
+  }
+
+  /* BOYSEN */
+  #header ul.header-inner li.others ul.top-menu li.web-logo{
+    margin-top: -5px;
+    width: 23%;
+  }
+
+  /* LET IT B */
+  #footerContent div.footer-icons div.let-it-be{
+    margin-top: 11vh;
+  }
+  /* BOYSEN */
+  #footerContent div.footer-icons div.boysen-logo{
+    margin-top: 12vh;
+  }
+
+  .youtube-iframe{
+    width: 100%;
+    height: calc(300px / 1.5);
+  }
+}
+
+@media only screen and (min-width : 581px) and (max-width : 645px){
+  /* LOADER WHILE CONTENT LOADS */
+  .request-buffer,
+  .request-buffer img{
+    /* height: calc(100vh / 2.4) !important; */
+  }
+  .request-buffer img{
+    /* width: 50% !important; */
+  }
+
+  #header .header-inner li.others{
+    width: 63%;
+  }
+
+  /* SEARCH */
+  #header ul.header-inner li.others ul.top-menu li.searchform{
+    width: 30%;
+  }
+
+  /* LET IT B */
+  #footerContent div.footer-icons div.let-it-be{
+    margin-top: 13vh;
+  }
+  /* BOYSEN */
+  #footerContent div.footer-icons div.boysen-logo{
+    margin-top: 14vh;
+  }
+
+  .youtube-iframe{
+    width: 100%;
+    height: calc(300px / 1.5);
+  }
+}
+
+@media only screen and (min-width : 646px) and (max-width : 767px){
+  /* LOADER WHILE CONTENT LOADS */
+  .request-buffer,
+  .request-buffer img{
+    /* height: calc(100vh / 2.5) !important; */
+  }
+  .request-buffer img{
+    /* width: 50% !important; */
+  }
+
+  #header .header-inner li.others{
+    width: 77%;
+  }
+
+  /* USER NAME */
+  .loggedInbtn {
+    max-width: 25%;
+    width: 100%;
+  }
+  .loggedInbtn span {
+    line-height: 50px;
+    padding: 0 0 0 10%;
+  }
+  .loggedInbtn span a {
+    max-width: 70%;
+    width: 70%;
+  }
+
+  /* BOYSEN */
+  #header ul.header-inner li.others ul.top-menu li.web-logo{
+    margin-top: -10px;
+    width: 30%;
+  }
+
+  /* LET IT B */
+  #footerContent div.footer-icons div.let-it-be{
+    margin-top: 13vh;
+  }
+  /* BOYSEN */
+  #footerContent div.footer-icons div.boysen-logo{
+    margin-top: 14vh;
+  }
+
+  .youtube-iframe{
+    width: 100%;
+    height: calc(300px / 1.5);
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 812px) and (orientation:landscape) {
+  .header-popup {
+    margin-top: 17vh !important;
+  }
+  .header-popup-content div{
+    left: calc(100%/4) !important;
+  }
+  .loggedInbtn span img {
+    width: calc(100vh / 14);
+    float: none !important;
+  }
+  .sweet-alert {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    left: 20% !important;
+    /* right: 15px; */
+  }
+  /* html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  } */
+
+  /* HIDE DATA */
+  /* data.ng-scope {
+    display: none;
+  } */
+
+  /* #body-content {
+    -ms-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    width: calc(100vw / 1);
+    height: calc(100vh / 1);
+    overflow: scroll;
+  } */
+
+  /* #landscape-view{
+    display: table-cell !important;
+  } */
+
+  .vjs-loading-spinner{
+    left:25%;
+  }
+
+  .request-buffer{
+    height: 135vh !important;
+    overflow: hidden !important;
+  }
+
+  .request-buffer img {
+    margin-top: 30vh;
+    height: 75vh;
+  }
+
+  .gridItem2{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem2 img{
+    /* height:32vh;  #remove*/
+    height: 140px;
+  }
+  .youtube-iframe{
+    width: 100%;
+    height: 400px;
+  }
+  .gridItem{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem img{
+    /* height:32vh;  #remove*/
+    height: 185px;
+  }
+  .scrollable-content{
+    min-height: 180px;
+  }
+  .gridItemCategory{
+    /* height:32vh; */
+    margin:4% .4%;
+    cursor: pointer;
+  }
+  .gridItemCategory img{
+    /* height:32vh;  #remove*/
+    height: 200px;
+  }
+  #header {
+    padding-left: 0;
+    padding-right: 0;
+    height: 17vh !important;
+  }
+  #header ul.header-inner li.others ul.top-menu li.web-logo {
+    margin-top: -5px !important;
+    width: 20% !important;
+  }
+
+  .loggedInbtn span img {
+    width: calc(50vh / 4) !important;
+    float: none !important;
+    margin-top: 5px;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.searchform span {
+    font-size: 28px !important;
+    padding: 0px 5px 0 0 !important;
+    min-width: 15px;
+  }
+
+  .video-content-image {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .video-content-desc{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .comment-users-icon{
+    width: 10% !important;
+  }
+
+  #sideImage{
+    margin-top: 20px;
+  }
+
+  .landscape-comment-box{
+    margin-top:20px;
+  }
+
+  #footerContent div.footer-icons div.let-it-be {
+    /* margin-top: 24vh; */
+  }
+
+  #footerContent div.footer-icons div.boysen-logo {
+    /* margin-top: 18vh; */
+  }
+
+  #boysen-vr {
+    margin-top: 16vh !important;
+    width: 30% !important;
+    margin-right: -16%;
+  }
+  .season-button-placing {
+    margin-top: -5% !important;
+  }
+
+  .grid-episode-container div{
+    height: 65px;
+  }
+  .videoPlayer{
+    height: 540px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.searchform {
+    width: 34%;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 500px) and (orientation:landscape) {
+  .comment-users-icon {
+    width: 15% !important;
+  }
+  #header ul.header-inner li.others ul.top-menu li.web-logo {
+    margin-right: 38px !important;
+  }
+  .loggedInbtn span img {
+    width: calc(40vh / 4) !important;
+    float: none !important;
+    margin-top: 5px;
+  }
+  .header-popup {
+    margin-top: 0vh !important;
+  }
+}
+@media only screen and (max-width : 767px) and (orientation:portrait){
+  .mobile-display-none{
+    display: none !important;
+  }
+  .video-title{
+    font-size: 1.5rem !important;
+  }
+  .episode-font{
+    font-size: 1.4rem !important;
+  }
+  .read-more-desc{
+    font-size: 1.25rem !important;
+  }
+  .headerPopupCss a {
+    font-size: 1.5rem;
+  }
+  .grid-episode-container-mobile{
+    display: grid;
+    grid-template-columns: 100% !important;
+    grid-gap: 10px;
+  }
+}

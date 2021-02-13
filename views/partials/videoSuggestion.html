@@ -1,0 +1,35 @@
+<!-- <h3 class="box-office-controls-container c-white">
+    YOU MAY ALSO LIKE
+    <span class="pull-right">
+        <button ng-click="onClickOwlNavigation('prev')" class="btn bgm-black c-white f-20" ng-if="videoSuggestions.length > 5"><i class="zmdi zmdi-chevron-left zmdi-hc-fw"></i></button>
+        <button ng-click="onClickOwlNavigation('next')" class="btn bgm-black c-white f-20" ng-if="videoSuggestions.length > 5"><i class="zmdi zmdi-chevron-right zmdi-hc-fw"></i></button>
+      </span>
+  </h3>
+  <div class="scrollable-content" id="video-suggestions">
+      <div ng-repeat="boysen in videoSuggestions" class="item gridItem p-l-10 p-r-10">
+        <img class="home-img" ng-if="boysen.content_types_id == '1'" hires="{{boysen.poster_url}}" src="{{placeHolderImg.poster_url}}" ui-sref="main.watchNowMovie({category:category.categoryUrl,title:boysen.permalink})">
+        <img class="home-img" ng-if="boysen.content_types_id == '3'" hires="{{boysen.poster_url}}" src="{{placeHolderImg.poster_url}}" ui-sref="main.watchNowSeries({category:category.categoryUrl,title:boysen.permalink})">
+        <img class="home-img" ng-if="boysen.content_types_id == 'no'" src="{{placeHolderImg.poster_url}}">
+      </div>
+    </div>
+  </div> -->
+  <div class="thumbnails c-white p-t-10 videoSuggestion" style="width:100%;" ng-if="videoSuggestions.length > 0">
+
+    <div>
+      <h3 class="boysen-now-controls-container goFultura c-white categoryIndention p-l-5 p-t-5">
+        YOU MAY ALSO LIKE
+        <span class="" style="white-space: nowrap; position: absolute; right: 0; margin-top: -15px;" ng-if="videoSuggestions.length > 4">
+            <button class="btn bgm-transparent c-white f-20 hidden-xs hidden-sm btn-suggestion" style="box-shadow: 0 0 0 !important;" ng-click="videoSuggestionScroll('prev');"><i class="zmdi zmdi-chevron-left zmdi-hc-fw"></i></button>
+            <button class="btn bgm-transparent c-white f-20 hidden-xs hidden-sm btn-suggestion" style="box-shadow: 0 0 0 !important;" ng-click="videoSuggestionScroll('next');"><i class="zmdi zmdi-chevron-right zmdi-hc-fw"></i></button>
+          </span>
+      </h3>
+      <div class="scrollable-content p-l-5 p-r-5" id="video-suggestions">
+            <div ng-repeat="boysen in videoSuggestions" class="item gridItem2" style="text-align: center">
+              <img class="gridItem gridItemVideoSuggestions home-img h-100" ng-if="boysen.content_types_id == '1'" src="{{boysen.poster_url}}" ui-sref="main.watchNowMovie({category:videoSpecs.category,title:boysen.permalink})">
+              <img class="gridItem gridItemVideoSuggestions home-img h-100" ng-if="boysen.content_types_id == '3'" src="{{boysen.poster_url}}" ui-sref="main.watchNowSeries({category:videoSpecs.category,title:boysen.permalink})">
+              <img class="gridItem gridItemVideoSuggestions home-img h-100" ng-if="boysen.content_types_id == 'no'" src="{{placeHolderImg.poster_url}}">
+            </div>
+        </div>
+      </div>
+
+  </div>

@@ -1,0 +1,30 @@
+<div class="col-md-4 col-sm-12 web-no-padding tablet-portrait-m-t-25 mobile-portrait-m-t-25 ng-scope" ng-controller="configurationCtrl as confCtrl"
+    ng-init="getSideContents();">
+
+    <a id="sideImageAnchor" target="_blank">
+        <div class="large-desktop-m-t-25 large-desktop-m-b-25 desktop-m-t-25 desktop-m-b-25" style="margin-right:0 !important; margin-top: 0 !important; margin-bottom: 40px !important;">
+            <img id="sideImage" ng-src="{{ sideContents.image.url }}" class="home-img h-100 image-fit-to-width" sb-load="onImgLoad($event)">
+            <!-- <span class="text-left" style="text-transform: uppercase; font-weight:bold;">{{ sideContents.image.name }}</span> -->
+        </div>
+    </a>
+
+    <div class="large-desktop-m-t-25 large-desktop-m-b-25 desktop-m-t-25 desktop-m-b-25" ng-repeat="links in sideContents.videos" style="margin-right: 0 !important;">
+        <h4 class="c-white text-left" style="text-transform: uppercase; font-weight:bold;">{{ links.name }}</h4>
+        <!-- <div class='custom-loader'><img src='/img/boysen.gif' /></div> -->
+        <div class="youtube-iframe image-fit-to-width">
+            <video
+                class="sideDiv-{{ $index }} video-js vjs-default-skin vjs-big-play-centered"
+                preload="auto"
+                controls
+                webkit-playsinline>
+            </video>
+        </div>
+        <!-- <div id="sideDiv-{{ $index }}"></div> -->
+    </div>
+    <br/>
+    <div class="large-desktop-m-t-25 desktop-m-t-25" style="margin-right:0 !important;">
+        <h5 class="c-white text-left" id="ForMoreIdeas">
+          <a href="http://www.myboysen.com/" target="_blank" class="c-white text-left" style="text-decoration:underline; text-transform: uppercase; cursor:pointer; font-weight:bold;">For more DIY ideas, Visit Let it B.</a>
+        </h5>
+    </div>
+</div>

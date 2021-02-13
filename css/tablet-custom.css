@@ -1,0 +1,553 @@
+@media only screen and (min-width : 768px) {
+  .sweet-alert{
+    margin-left: -224px !important;
+  }
+
+  #comment-section textarea{
+    width: 100%;
+    border-radius: 10px;
+  }
+  #grid-content{
+    padding: 0 0 35px 0 !important; 
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  #content{
+    /* margin-top: 70px; */
+  }
+
+  #header .header-inner li.logo{
+    width: 15%;
+  }
+  #header .header-inner li.others{
+    /* width: 60%; */
+    width: 70%;
+  }
+  .watchNow-containter{
+    padding:6% 5%;
+    background: black;
+    color: white;
+  }
+  /* STUDIO B */
+  #header .ng-scope .header-inner li.logo{
+    height: 100%;
+    line-height: 40px;
+  }
+  #header ul.header-inner li.logo img{
+    width: 100%;
+    height: 40px;
+  }
+
+  /* SEARCH */
+  #header ul.header-inner li.others ul.top-menu li.searchform span{
+    padding: 5px 5px 0 0;
+    min-width: 15px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.searchform input{
+    height: 30px;
+    width: 100%;
+  }
+
+  /* USER NAME */
+  .loggedInbtn{
+    max-width: 35%;
+    width: 100%;
+    padding: 0;
+  }
+  .loggedInbtn span{
+    line-height: 50px;
+    padding: 0 0 0 20%;
+  }
+  .loggedInbtn span img{
+    width: calc(50vh / 14);
+    float: none !important;
+  }
+  .loggedInbtn span a{
+    float: right;
+    padding: 18px 5px;
+    max-width: 60%;
+    width: 60%;
+    font-size: small;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+  }
+
+  /* BOYSEN */
+  #header ul.header-inner li.others ul.top-menu li.web-logo{
+    margin-top: -20px;
+    width: 28%;
+  }
+  #header ul.header-inner li.others ul.top-menu li.web-logo img{
+    width: 100%;
+  }
+
+  /* CAROUSEL */
+  section#content{
+  }
+  #banner-carousel .carousel-inner,
+  #banner-carousel .carousel-inner div img.carousel-image{
+    /*height: 815px !important;*/
+  }
+  div.carousel .carousel-inner img{
+    object-fit: cover;
+  }
+
+  /* YELLOW TAG */
+  .watch-for-free-label{
+    font-size: 6rem !important;
+    margin-bottom: 3.5vh;
+    padding-top: 2vh;
+  }
+  .watch-for-free-category-label{
+    font-size: 2rem !important;
+    font-weight: bold;
+    margin-bottom: 1vh !important;
+  }
+  #category-selection{
+    width: 90%;
+    display: inline-block;
+    margin-bottom: 2vh;
+    margin-left: -30px;
+  }
+  #category-selection button{
+    font-size: 2rem !important;
+    margin: 10px 5px;
+    padding: 3px 10px;
+  }
+
+  /* CATEGORIES */
+  #grid-content .gridContent .gridItem{
+    width: calc(100vw / 3.1) !important;
+    height: calc(100vh / 3);
+    margin: 0 2px 2px 5px;
+    display: inline-block;
+  }
+  #grid-content .gridContent .gridItem img {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* THMUBNAILS */
+  .thumbnails h3:nth-child(1),
+  #grid-content h3:nth-child(1){
+    margin-top: 0px;
+  }
+  .boysen-now-controls-container span button,
+  .box-office-controls-container span button{
+      padding: 3px 6px;
+  }
+
+  /* ICONS */
+  /* #footerContent div.footer-icons{
+    display: block !important;
+    width: 90% !important;
+  } */
+  /* LET IT B */
+  /* #footerContent div.footer-icons div.let-it-be{
+    padding: 0 37px !important;
+    float: left;
+    width: 30% !important;
+    margin-top: 9vh;
+    margin-left: 4vw;
+  } */
+  /* BOYSEN */
+  /* #footerContent div.footer-icons div.boysen-logo{
+    float: right;
+    width: 30%;
+    margin-top: 7vh;
+    margin-right: 4vw;
+  } */
+  /* BOYSEN VR */
+  /* #footerContent div.footer-icons div.boysen-vr{
+    margin-top: 5vh;
+    margin-right: 0;
+  } */
+  /* SOCIAL MEDIA */
+  /* #footerContent div.footer-icons div.footer-social-media{
+    float: none;
+    width: 30%;
+    position: absolute !important;
+    margin: auto 30%;
+  } */
+  /* #footerContent div.footer-icons div.footer-social-media div{
+    float: left;
+    width: 30%;
+  } */
+  #footerContent div.footer-icons{
+    display:flex;
+    width:80%;
+    margin:0 auto;
+  }
+  /* LINKS */
+  #footerContent div.footer-links{
+    display: inline-block !important;
+    width: 100% !important;
+    margin: 2vh auto !important;
+    font-size: 15px;
+  }
+  .footer-copyrights{
+    font-size: 18px;
+    padding: 7px 0 !important;
+  }
+
+  .series-number-button {
+    box-shadow: 0 0 0 transparent !important;
+    font-size: 1.2rem;
+}
+}
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape){
+  .vjs-fullscreen .vjs-loading-spinner{
+    width: 100% !important;
+    height: 100% !important;
+    top: auto !important;
+    left: auto !important;
+  }
+  .vjs-fullscreen .vjs-loading-spinner img{
+    /* position: absolute !important; */
+    /* top: 30% !important; */
+    /* height: 50% !important; */
+    /* left: 20% !important; */
+    /* width: auto !important; */
+  }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait){
+
+  .f-menu {
+    display: inline-flex !important;
+  }
+  .vjs-fullscreen .vjs-loading-spinner{
+    width: 100% !important;
+    height: 100% !important;
+    top: auto !important;
+    left: auto !important;
+  }
+  .vjs-fullscreen .vjs-loading-spinner img{
+    /* position: absolute !important; */
+    /* top: 30% !important; */
+    /* height: 50% !important; */
+    /* left: 0% !important; */
+    /* width: auto !important; */
+  }
+}
+/* iPads (landscape) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1023px) and (orientation : landscape){
+  #banner-carousel .carousel-inner div img.carousel-image {
+      height: 460px !important;
+      width: 100%;
+      object-fit: fill;
+  }
+  
+  .carousel-inner{
+    background-color: rgb(0, 0, 0);
+    height: 460px !important;
+    margin-top: 70px;
+  }
+  .vjs-loading-spinner{
+    left:25%;
+    top: 40% !important;
+  }
+  .episode-text-container{
+    font-size: 6rem;
+    vertical-align: middle;
+    display:  flex;
+  }
+  .videoPlayer{
+    height: 680px;
+  }
+
+  #header .header-inner li.others{
+    width: 60%;
+  }
+
+  /* SEARCH */
+  #header ul.header-inner li.others ul.top-menu li.searchform{
+    width: 35%;
+  }
+  #header ul.header-inner li.others ul.top-menu li.searchform span{
+    padding: 5px 10px 0 0;
+    min-width: 15px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.searchform input{
+    height: 30px;
+    width: 100%;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.signupbtn,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn{
+    min-width: 80px;
+    padding: 0;
+  }
+  #header ul.header-inner li.others ul.top-menu li.signupbtn a,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn a{
+    padding: 15px 0 0 0;
+    font-size: 1.5rem;
+    width: 80px;
+  }
+
+  /* BOYSEN */
+  #header ul.header-inner li.others ul.top-menu li.web-logo{
+    margin-top: -20px;
+    width: 25%;
+  }
+
+  #content{
+    padding: 0;
+  }
+
+  #banner-carousel .carousel-inner div img.carousel-image{
+    /* height: calc(100vh / 1.82) !important; */
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1023px) and (orientation : portrait){
+  #banner-carousel .carousel-inner div img.carousel-image {
+      height: 360px !important;
+      width: 100%;
+      object-fit: fill;
+  }
+  
+  .carousel-inner{
+    background-color: rgb(0, 0, 0);
+    height: 360px !important;
+    margin-top: 70px;
+  }
+  .reset-password-form{
+    height: 69vh;
+    padding: 10% 40% 0 40%;
+  }
+  .footer-icons{
+    display:flex !important;
+    width:90% !important;
+    margin:0 auto !important;
+  }
+  .footer-icons div{
+    padding: 0 !important;
+    /* margin. */
+  }
+  .videoPlayer{
+    height: 500px;
+  }
+  /* LOADER WHILE CONTENT LOADS */
+  .request-buffer{
+    height: 100vh !important;
+  }
+  .request-buffer img{
+    height: calc(100vh / 3.98) !important;
+    width: 30% !important;
+    margin-top: 35vh !important;
+  }
+
+  .episode-text-container{
+    font-size: 6rem;
+    vertical-align: middle;
+    display:  flex;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.searchform{
+    width: 35%;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.signupbtn,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn{
+    min-width: 80px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.signupbtn a,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn a{
+    padding: 19px 0 0 0;
+    font-size: 20px;
+    width: 80px;
+  }
+
+  #content{
+    padding: 0;
+  }
+  #content{
+    /* margin-top: 90px; */
+  }
+
+  .web-logo{
+        height: 70px;
+  }
+  .loginbtn,
+  .signupbtn{
+    height: 50px;
+    padding: 0;
+  }
+
+  .loginbtn a,
+  .signupbtn a{
+    color: white;
+    font-size: 2.5rem;
+  }
+
+  .loginbtn a.btn:hover, .loginbtn a.btn:focus,
+  .signupbtn a.btn:hover, .signupbtn a.btn:focus{
+    color: #FFFF00;
+    text-decoration: none;
+  }
+  #boysen-flag {
+    margin-top: -4%;
+  }
+
+  #banner-carousel .carousel-inner div img.carousel-image{
+    /* height: calc(100vh / 1.29) !important; #remove */
+  }
+
+  .season-button-placing{
+    margin-top: -10%;
+  }
+  .comment-textarea{
+    border-radius: 15px;
+    height:50px;
+    color: black;
+    width: 95%;
+  }
+  .video-suggestion{
+    height: calc(100vh / 6);
+  }
+
+  .episode-container{
+    border-bottom: 2px solid black;
+    height: 100px
+  }
+
+  .series-number-button{
+    box-shadow: 0 0 0 transparent !important;
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width : 768px) and (orientation : portrait){
+  .youtube-iframe{
+    width: 100%;
+    height: 400px;
+  }
+  .vjs-loading-spinner{
+    left:25%;
+    top: 40% !important;
+  }
+  #header ul.header-inner li.others ul.top-menu li.searchform{
+    width: 35%;
+  }
+  .termsAndPrivacyModal{
+    height: 300px;
+    margin: 20px;
+  }
+  
+  .gridItem2{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem2 img{
+    /* height:32vh;  #remove*/
+    height: 200px;
+  }
+  .divCategory{
+    min-height: 200px;
+    padding: 15px 2%;
+  }
+  .gridContent{
+    min-height: 200px;
+    grid-template-columns: 23% 23% 23% 23% !important;
+    margin-left: 6%;
+  }
+  .gridItem{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+  }
+  .gridItem img{
+    /* height:32vh;  #remove*/
+    height: 185px;
+  }
+  .gridItemCategory{
+    /* height:32vh; */
+    margin:2% .4%;
+    cursor: pointer;
+    display: inline-flex;
+    min-height: 200px;
+  }
+  .gridItemCategory img{
+    /* height:32vh;  #remove*/
+    height: 200px;
+  }
+
+  #header ul.header-inner li.others ul.top-menu li.signupbtn,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn{
+    min-width: 80px;
+  }
+  #header ul.header-inner li.others ul.top-menu li.signupbtn a,
+  #header ul.header-inner li.others ul.top-menu li.loginbtn a{
+    padding: 10px 0 0 0;
+    font-size: 20px;
+    width: 80px;
+  }
+
+  #content{
+    padding: 0;
+  }
+  #content{
+    /* margin-top: 70px; */
+  }
+
+  .web-logo{
+        height: 70px;
+  }
+  .loginbtn,
+  .signupbtn{
+    height: 50px;
+    padding: 0;
+  }
+
+  .loginbtn a,
+  .signupbtn a{
+    color: white;
+    font-size: 2.5rem;
+  }
+
+  .loginbtn a.btn:hover, .loginbtn a.btn:focus,
+  .signupbtn a.btn:hover, .signupbtn a.btn:focus{
+    color: #FFFF00;
+    text-decoration: none;
+  }
+  #boysen-flag {
+    margin-top: -4%;
+  }
+  .season-button-placing{
+    margin-top: -10%;
+  }
+  .comment-textarea{
+    border-radius: 15px;
+    height:50px;
+    color: black;
+    width: 95%;
+  }
+  .video-suggestion{
+    height: calc(100vh / 6);
+  }
+
+  .episode-container{
+    border-bottom: 2px solid black;
+    height: 100px;
+  }
+
+  .series-number-button{
+    box-shadow: 0 0 0 transparent !important;
+    font-size: 3rem;
+  }
+
+  .tablet-social-width{
+    width: 41%;
+  }
+  .tablet-social-width span{
+    font-size: 12px
+  }
+}

@@ -1,0 +1,73 @@
+<style media="screen">
+  .row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #comment-section h3{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .owl-item:first-child div{
+    padding-left: 0 !important;
+  }
+  .owl-item:last-child div{
+    padding-right: 0 !important;
+  }
+</style>
+
+<div class="watchNow-containter" style="background: #171717 !important" ng-init="getContentDetails();hctrl.headerPopup = false">
+    <h3 style="text-indent: 1.75%;" class="breadcrumbs c-white">HOME / {{videoSpecs.category | replace: '-':' ' | uppercase }} / {{videoTitle | uppercase}}</h3>
+
+    <div class="row">
+      <!-- MAIN CONTENT -->
+      <div class="col-md-8 col-sm-12 main-container">
+
+        <!-- VIDEO CONTENT -->
+        <div class="videoPlayer image-fit-to-width">
+          <img src = "/img/boysenlogo3.png" class="videojs-logo" />
+          <!-- <div>
+              <i class="zmdi zmdi-rotate-left zmdi-hc-fw"></i>
+          </div> -->
+            <video
+                oncontextmenu="return false"
+                class="main-videojs video-js vjs-default-skin vjs-big-play-centered"
+                preload="auto"
+                controls
+                playsinline
+                webkit-playsinline>
+            </video>
+        </div>
+        <!-- END VIDEO CONTENT -->
+
+        <div class="row bgm-yellow c-black large-desktop-p-25 desktop-p-25 mobile-portrait-p-10 tablet-portrait-p-25 tablet-landscape-p-25">
+          <!-- VIDEO SPECS -->
+          <div class="row">
+              <div class="mobile-no-padding col-md-3 col-sm-3 video-content-image">
+                  <img ng-src="{{ imgBanner }}" class="image-fit-to-width">
+                </div>
+                <div class="col-md-9 col-sm-9 video-content-desc">
+                  <h3 class="video-title m-t-0" style="font-weight: bolder;">{{ videoTitle | uppercase}}</h3>
+                  <!-- <p style="text-align:left;" id="series-desc" class="tile__img  goMyriad read-more-desc f-16">{{ videoDesc }}</p> -->
+                  <p style="text-align:left;" id="series-desc" class="goMyriad read-more-desc f-16" dd-text-collapse dd-text-collapse-max-length="{{ readmoreValue }}" dd-text-collapse-text="{{ videoDesc }}"></p>
+                  <!-- <p style="cursor:pointer;" ng-if="videoDesc.length > 300" class="isMobile" id="read-more" ng-click="readMore(isDescFull);">Read More</p> -->
+                </div>
+          </div>
+          <!-- END VIDEO SPECS -->
+        </div>
+        <!-- RECOMMENDATION -->
+        <div ng-include="'views/partials/videoSuggestion.html'"></div>
+        <!-- END RECOMMENDATION -->
+        <!-- COMMENT SECTION -->
+        <div id="comment-section" ng-include="'views/partials/commentSection.html'"></div>
+        <!-- END COMMENT SECTION -->
+
+      </div>
+      <!-- END MAIN CONTENT -->
+      <!-- SIDE CONTENT-->
+      <div ng-include="'views/partials/sideContents.html'"></div>
+      <!-- END SIDE CONTENT -->
+    </div>
+
+  </div>
